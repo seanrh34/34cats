@@ -1,9 +1,8 @@
-name = "34cats"
+name = "34cats-website"
 compatibility_date = "2025-06-30"
-
-[site]
-bucket = "./dist"
-entry-point = "."
 
 [build]
 command = "npm run build"
+
+[assets]
+directory = "./dist"
