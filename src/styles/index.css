@@ -20,3 +20,43 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes pulse-ring {
+  0%, 100% {
+    border-color: #2a6fba; /* Tailwind primary */
+    box-shadow: 0 0 20px #2a6fba;
+  }
+  50% {
+    border-color: #3299cd; /* Tailwind accent */
+    box-shadow: 0 0 20px #3299cd;
+  }
+}
+
+.hero-ring {
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+@keyframes pulseGradient {
+  0%, 100% {
+    background-image: linear-gradient(to bottom, theme('colors.primary') 0%, theme('colors.background') 100%);
+  }
+  50% {
+    background-image: linear-gradient(to bottom, theme('colors.accent') 0%, theme('colors.background') 100%);
+  }
+}
+
+.fixed-background-glow {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  transition: background 0.5s ease-in-out;
+  background:
+    radial-gradient(
+      ellipse 980% 70% at 50% 99%,
+      rgba(var(--color-accent-rgb), 0.15) 5%,
+      rgba(0, 0, 0, 0) 100%
+    );
+}

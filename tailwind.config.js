@@ -25,12 +25,45 @@ export default {
       },
       colors: {
         'text': '#e2e8f0',
-        'background': '#0f172a',
-        'primary': '#5de8d2',
-        'secondary': '#7d8b9f',
-        'accent': '#2b6383',
+        'background': '#030611',
+        'primary': '#2c77d8',
+        'secondary': '#181a20',
+        'accent': '#46ce91',
+        'navbar': '#0f172a',
+      },
+      animation: {
+        'gradient-x': 'gradientX 4s ease-in-out infinite',
+      },
+      keyframes: {
+        gradientX: {
+          '0%, 100%': {
+            backgroundPosition: '0% 50%',
+          },
+          '50%': {
+            backgroundPosition: '100% 50%',
+          },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addBase, theme }) {
+      function hexToRgb(hex) {
+        const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+        return `${r}, ${g}, ${b}`;
+      }
+
+      const primary = theme('colors.primary');
+      const accent = theme('colors.accent');
+
+      addBase({
+        ':root': {
+          '--color-primary': primary,
+          '--color-primary-rgb': hexToRgb(primary),
+          '--color-accent': accent,
+          '--color-accent-rgb': hexToRgb(accent),
+        },
+      });
+    }
+  ],
 }
