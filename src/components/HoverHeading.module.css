@@ -1,0 +1,34 @@
+.button {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: default;
+  --border-right: 6px;
+  --text-stroke-color: rgba(var(--color-text-rgb), 0.5);
+  --animation-color: var(--color-accent);
+  color: var(--color-text);
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  display: inline-block; /* Important for measuring text size */
+  margin: 0 auto; /* Allow centering via text-center */
+}
+
+.hoverText {
+  position: absolute;
+  top: 0;
+  left: 0; /* Key: start from left of text */
+  height: 100%;
+  width: 0%;
+  color: var(--animation-color);
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: width 0.5s ease;
+  -webkit-text-stroke: 1px var(--animation-color);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.button:hover .hoverText {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}

@@ -5,16 +5,17 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col pt-12 pb-12 px-24 items-center justify-center text-text font-body relative fixed-background-glow"
+      className="scroll-mt-24 min-h-screen flex flex-col pt-12 pb-12 px-24 items-center justify-center text-text font-body relative"
     >
+      <div className="absolute inset-0 z-0 animate-pulse-slow fixed-background-glow" />
       <div className="text-center">
-        <h1 className="text-3xl md:text-8xl leading-tight md:leading-snug mb-2 font-heading font-bold bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_200%] bg-clip-text       text-transparent animate-gradient-x">
+        <h1 className="text-5xl md:text-8xl leading-tight md:leading-snug mb-6 md:mb-2 font-heading font-bold bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_200%] bg-clip-text       text-transparent animate-gradient-x">
           Sean Hardjanto
         </h1>
-        <h2 className="text-2xl md:text-5xl mb-2 font-heading font-bold text-text">
+        <h2 className="text-4xl md:text-5xl mb-6 md:mb-2 font-heading font-bold text-text">
           Web Developer
         </h2>
-        <p className="text-md md:text-2xl font-normal text-text md:mt-4 mb-6 md:mx-24">
+        <p className="text-lg md:text-2xl font-normal text-text md:mt-4 mb-6 md:mx-24">
           Dedicated to coming up with useful digital solutions as well as crafting experiences that are fun for me to make and great for you to use.
         </p>
       </div>

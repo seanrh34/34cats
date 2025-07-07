@@ -12,11 +12,13 @@ import Main from './pages/Main'
 import App1Page from './pages/App1Page'
 import App2Page from './pages/App2Page'
 
+import ScrollToHash from './components/ScrollToHash';
 
 function App() {
   return (
     <Router>
       <CursorAura />
+      <ScrollToHash />
       <div className="min-h-screen bg-background text-text font-body">
         <Navbar />
         <main className="pt-20">
@@ -29,7 +31,7 @@ function App() {
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
 
 export default App

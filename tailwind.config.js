@@ -44,6 +44,9 @@ export default {
           },
         },
       },
+      animation: {
+        'pulse-slow': 'pulse 4s ease-in-out infinite',
+      },
     },
   },
   plugins: [
@@ -62,6 +65,12 @@ export default {
           '--color-primary-rgb': hexToRgb(primary),
           '--color-accent': accent,
           '--color-accent-rgb': hexToRgb(accent),
+          '--color-text': theme('colors.text'),
+          '--color-text-rgb': hexToRgb(theme('colors.text')),
+          '--color-background': theme('colors.background'),
+          '--color-background-rgb': hexToRgb(theme('colors.background')),
+          '--font-body': theme('fontFamily')['body'].join(', '),
+          '--font-heading': theme('fontFamily')['heading'].join(', '),
         },
       });
     }
