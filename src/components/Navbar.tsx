@@ -1,59 +1,119 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+
+const navItems = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '-50% 0px -40% 0px', // triggers when section is near middle of screen
-        threshold: 0,
-      }
-    );
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
 
-    sections.forEach((section) => observer.observe(section));
-    return () => sections.forEach((section) => observer.unobserve(section));
+      let current = "";
+      for (const item of navItems) {
+        const id = item.href.substring(1);
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            current = id;
+            break;
+          }
+        }
+      }
+
+      if (window.scrollY < 50 && !current) current = "home";
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-    return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-navbar border-b border-secondary text-text md:px-48 py-8 shadow-md flex justify-between items-center navbar-ring">
-      <a href="#home" className="font-heading text-2xl font-bold text-text">
-        34cats
-      </a>
-      <div className="space-x-6 hidden md:flex font-body text-xl">
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.substring(1);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300
+        bg-navbar text-text border-b px-6 shadow-md md:px-48 navbar-ring
+        ${isScrolled || isOpen ? "bg-navbar/95 backdrop-blur-md border-secondary" : "border-transparent"}`}
+    >
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center h-16 sm:h-20">
         <a
-          href="#about"
-          className={`transition-colors ${
-            activeSection === 'about' ? 'text-text-secondary font-semibold bg-accent bg-opacity-20 px-4 py-2 rounded' : 'text-text font-semibold px-4 py-2 rounded'
-          }`}
+          href="#home"
+          onClick={(e) => handleLinkClick(e, "#home")}
+          className="text-2xl font-bold font-heading text-text"
         >
-          About
+          34cats
         </a>
-        <a
-          href="#projects"
-          className={`transition-colors ${
-            activeSection === 'projects' ? 'text-text-secondary font-semibold bg-accent bg-opacity-20 px-4 py-2 rounded' : 'text-text font-semibold px-4 py-2 rounded'
-          }`}
-        >
-          Projects
-        </a>
-        <a
-          href="#contact"
-          className={`transition-colors ${
-            activeSection === 'contact' ? 'text-text-secondary font-semibold bg-accent bg-opacity-20 px-4 py-2 rounded' : 'text-text font-semibold px-4 py-2 rounded'
-          }`}
-        >
-          Contact
-        </a>
+
+        {/* Desktop menu */}
+        <div className="hidden md:flex space-x-6 font-body text-xl">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(e) => handleLinkClick(e, item.href)}
+              className={`px-4 py-2 rounded font-semibold transition-colors ${
+                activeSection === item.href.substring(1)
+                  ? "text-text-secondary bg-accent bg-opacity-20"
+                  : "text-text hover:bg-slate-700/30"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 text-slate-300 hover:text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <span className="text-2xl">{isOpen ? "✖" : "☰"}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile dropdown - always rendered, animated with max-h */}
+      <div
+        className={`
+          md:hidden overflow-hidden transition-all duration-300 ease-in-out
+          ${isOpen ? "max-h-96 opacity-100 visible" : "max-h-0 opacity-0 invisible"}
+        `}
+      >
+        <div className="p-4 shadow-lg backdrop-blur-none border-t border-slate-700/60">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(e) => handleLinkClick(e, item.href)}
+              className={`block px-4 py-2 rounded-md text-base font-bold text-lg transition-colors ${
+                activeSection === item.href.substring(1)
+                  ? "text-teal-300 bg-teal-500/20"
+                  : "text-slate-200 hover:text-white hover:bg-slate-700/40"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   );
 }
-
