@@ -3,7 +3,7 @@ type MiniNavbarProps = {
   setActiveId: (id: string) => void;
 };
 
-const items = ["about", "experience", "projects"];
+const items = ["bio", "education", "experience"];
 
 export default function MiniNavbar({ activeId, setActiveId }: MiniNavbarProps) {
   return (

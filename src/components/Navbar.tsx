@@ -31,7 +31,7 @@ export default function Navbar() {
         <a
           href="#about"
           className={`transition-colors ${
-            activeSection === 'about' ? 'text-text bg-accent bg-opacity-30 px-4 py-2 rounded' : 'text-text px-4 py-2 rounded'
+            activeSection === 'about' ? 'text-text-secondary font-semibold bg-accent bg-opacity-20 px-4 py-2 rounded' : 'text-text font-semibold px-4 py-2 rounded'
           }`}
         >
           About
@@ -39,7 +39,7 @@ export default function Navbar() {
         <a
           href="#projects"
           className={`transition-colors ${
-            activeSection === 'projects' ? 'text-text bg-accent bg-opacity-30 px-4 py-2 rounded' : 'text-text px-4 py-2 rounded'
+            activeSection === 'projects' ? 'text-text-secondary font-semibold bg-accent bg-opacity-20 px-4 py-2 rounded' : 'text-text font-semibold px-4 py-2 rounded'
           }`}
         >
           Projects
@@ -47,7 +47,7 @@ export default function Navbar() {
         <a
           href="#contact"
           className={`transition-colors ${
-            activeSection === 'contact' ? 'text-text bg-accent bg-opacity-30 px-4 py-2 rounded' : 'text-text px-4 py-2 rounded'
+            activeSection === 'contact' ? 'text-text-secondary font-semibold bg-accent bg-opacity-20 px-4 py-2 rounded' : 'text-text font-semibold px-4 py-2 rounded'
           }`}
         >
           Contact

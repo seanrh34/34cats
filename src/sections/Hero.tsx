@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="scroll-mt-24 min-h-screen flex flex-col pt-12 pb-12 px-24 items-center justify-center text-text font-body relative"
+      className="scroll-mt-24 min-h-screen flex flex-col pt-12 pb-12 px-24 items-center justify-center text-text font-body relative border-none"
     >
       <div className="absolute inset-0 z-0 animate-pulse-slow fixed-background-glow" />
       <div className="text-center">

@@ -81,3 +81,20 @@ html {
     }
   }
 }
+
+
+/* For about mininavbar cards */
+.fade-section {
+  transition: opacity 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
