@@ -9,7 +9,7 @@ import MiniNavbar from "../components/AboutSection/MiniNavbar";
 
 // Constants and assets
 import { sectionWrapper, experienceData, educationData } from "../constants";
-import sean_photo from "../assets/images/sean_photo_resized.jpg";
+import sean_photo from '/images/sean_photo_resized.jpg';
 import { ExperienceGroup } from '../components/AboutSection/ExperienceCard';
 import { EducationGroup } from '../components/AboutSection/EducationCard';
 
@@ -20,7 +20,7 @@ export default function About() {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    fetch('/src/public/about.md')
+    fetch('/text/about.md')
       .then((res) => res.text())
       .then((text) => setContent(text));
   }, []);
