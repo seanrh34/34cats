@@ -20,7 +20,7 @@ export default function About() {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    fetch('/src/assets/text/about.md')
+    fetch('/src/public/about.md')
       .then((res) => res.text())
       .then((text) => setContent(text));
   }, []);
