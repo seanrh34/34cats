@@ -18,7 +18,7 @@ export default function Projects() {
           <HoverHeading title="Projects" />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 xl:px-96 mt-4 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:px-96 mt-4 items-stretch">
         {projectsData.map((project, index) => (
           <div className="col-span-1 h-full" key={index}>
             <ProjectCard project={project} />

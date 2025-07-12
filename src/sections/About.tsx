@@ -49,8 +49,8 @@ export default function About() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 mt-4 items-start md:items-center">
-        <div className="flex flex-col md:ml-24 xl:ml-96">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 mt-4 items-start md:items-center xl:items-start">
+        <div className="flex flex-col md:ml-24 xl:ml-96 xl:mt-4">
           <div className="relative aspect-[3/4] sm:aspect-square rounded-[20px] shadow-2xl group">
             <ProfilePicture imageUrl={sean_photo} />
           </div>

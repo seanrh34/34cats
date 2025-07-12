@@ -15,7 +15,9 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group relative bg-[#07182E] flex flex-col items-center justify-start overflow-hidden rounded-[20px] transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_5px_25px_rgba(var(--color-accent-rgb))]">
+    <div className="group relative flex flex-col items-center justify-start overflow-hidden rounded-[20px] 
+    bg-gradient-to-r from-secondary via-background to-secondary
+    transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_5px_25px_rgba(var(--color-accent-rgb))]">
       
       <div className="w-full h-full bg-black rounded-t-[20px] overflow-hidden flex items-center justify-center">
         <img

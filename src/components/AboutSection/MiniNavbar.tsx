@@ -11,7 +11,13 @@ export default function MiniNavbar({ activeId, setActiveId }: MiniNavbarProps) {
       {items.map((item) => (
         <button
           key={item}
-          onClick={() => setActiveId(item)}
+          onClick={() => {
+            setActiveId(item);
+            const section = document.getElementById(item);
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }}
           className={`group flex items-center gap-4 text-2xl uppercase tracking-wide font-bold transition-all 
             ${activeId === item ? "text-white" : "text-slate-500 hover:text-white"}`}
         >

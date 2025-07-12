@@ -11,7 +11,7 @@ type AboutCardProps = {
 export default function AboutCard({ name, email, nationality, status, bio }: AboutCardProps) {
   return (
     <div className="relative bg-secondary flex flex-col rounded-xl p-6 m-8 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(var(--color-primary-rgb))]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 p-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-4 p-2">
         <div>
           <p className="text-md md:text-lg font-bold">Name</p>
           <p className="text-lg md:text-xl">{name}</p>
