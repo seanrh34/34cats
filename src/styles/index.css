@@ -50,39 +50,6 @@ html {
   transition: background 0.5s ease-in-out;
 }
 
-
-/* For Card2 Component */
-@layer utilities {
-  .card-glow::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 130%;
-    background-image: linear-gradient(180deg, rgba(var(--color-primary-rgb)), rgba(var(--color-accent-rgb)));
-    animation: spin-bg 3s linear infinite;
-    transition: all 0.2s linear;
-  }
-
-  .card-glow::after {
-    content: '';
-    position: absolute;
-    inset: 5px;
-    border-radius: 15px;
-    background: #07182E;
-  }
-
-  @keyframes spin-bg {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
-  }
-}
-
-
 /* For about mininavbar cards */
 .fade-section {
   transition: opacity 0.3s ease;

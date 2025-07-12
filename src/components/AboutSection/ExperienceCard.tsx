@@ -52,7 +52,7 @@ export const ExperienceGroup: React.FC<ExperienceGroupProps> = ({ cards }) => {
               {card.tags.map((tag, j) => (
                 <span
                   key={j}
-                  className="bg-accent bg-opacity-20 text-text-secondary text-sm font-semibold px-3 py-1 rounded-full"
+                  className="bg-accent bg-opacity-20 text-text-secondary text-xs font-semibold px-3 py-1 rounded-full"
                 > 
                   {tag}
                 </span>

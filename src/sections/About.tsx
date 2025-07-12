@@ -8,7 +8,8 @@ import MiniNavbar from "../components/AboutSection/MiniNavbar";
 
 
 // Constants and assets
-import { sectionWrapper, experienceData, educationData } from "../constants";
+import { sectionWrapper } from "../constants";
+import { experienceData, educationData } from '../assets/profileData';
 import sean_photo from '/images/sean_photo_resized.jpg';
 import { ExperienceGroup } from '../components/AboutSection/ExperienceCard';
 import { EducationGroup } from '../components/AboutSection/EducationCard';
@@ -49,19 +50,16 @@ export default function About() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 mt-4 items-start md:items-center">
-        {/* LEFT COLUMN */}
         <div className="flex flex-col md:ml-24 xl:ml-96">
           <div className="relative aspect-[3/4] sm:aspect-square rounded-[20px] shadow-2xl group">
             <ProfilePicture imageUrl={sean_photo} />
           </div>
 
-          {/* MiniNavbar only for md+ */}
           <div className="hidden md:flex flex-col pl-36 xl:pl-72">
             <MiniNavbar activeId={activeId} setActiveId={setActiveId} />
           </div>
         </div>
 
-        {/* RIGHT COLUMN for md+ */}
         <div
           className={`hidden md:block relative justify-center xl:mr-96 transition-all duration-300`}
           style={{ opacity: isFadingOut ? 0 : 1 }}
@@ -92,7 +90,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* SM-only: stacked display */}
+      {/* SM-only: stacked display for mobile devices */}
       <div className="block md:hidden space-y-6 -mt-24">
         <div className='flex flex-col items-center'>
           <AboutCard
