@@ -21,7 +21,7 @@ export default function ContactForm() {
       return;
     }
 
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
 
     const json = JSON.stringify(Object.fromEntries(formData.entries()));
     setResult("Please wait...");
@@ -114,7 +114,6 @@ export default function ContactForm() {
             <input
               type="text"
               name="phone"
-              required
               placeholder="+65 1234 5678"
               className="w-full px-3 py-2 border border-gray-600 bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
             />
