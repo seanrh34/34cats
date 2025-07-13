@@ -1,5 +1,6 @@
 // Components
 import HoverHeading from "../components/HoverHeading";
+import ContactForm from "../components/ContactForm";
 
 
 // Constants and assets
@@ -15,7 +16,9 @@ export default function Contact() {
           <HoverHeading title="Contact Me" />
         </div>
       </div>
-      <p className="text-base">Coming Soon!</p>
+      <div className="w-full">
+        <ContactForm />
+      </div>
     </section>
   )
 }
