@@ -1,9 +1,13 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function ContactForm() {
   const { register, handleSubmit, setValue } = useForm();
-  
+  const [ submitted, setSubmitted ] = useState(false);
+  const [ submitStatus, setSubmitStatus ] = useState("");
+  const [ errorPresent, setErrorPresent ] = useState(false);
+
   const onHCaptchaChange = (token: string) => {
     setValue("h-captcha-response", token);
   };
@@ -29,13 +33,19 @@ export default function ContactForm() {
       
       if (result.success) {
         // Handle success
-        console.log("Form submitted successfully!");
+        setSubmitted(true);
+        setSubmitStatus("Form submitted successfully!");
       } else {
         // Handle error
         console.error("Form submission failed:", result.message);
+        setSubmitStatus("Form submission failed: " + result.message);
+        setErrorPresent(true);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred";
+      setSubmitStatus("Error submitting form: " + errorMessage);
+      setErrorPresent(true);
     }
   };
 
@@ -151,6 +161,11 @@ export default function ContactForm() {
             </svg>
           </button>
         </div>
+        { submitted && (
+          <div className={`flex justify-center text-text message ${errorPresent ? "error" : "success"}`}>
+            { errorPresent ? <span className="text-red-500">{submitStatus}</span> : <span className="text-text">{submitStatus}</span> }
+          </div>
+        )}
       </form>
     </div>
   );
