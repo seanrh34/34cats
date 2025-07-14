@@ -1,8 +1,0 @@
-name = "34cats-website"
-compatibility_date = "2025-06-30"
-
-[build]
-command = "npm run build"
-
-[assets]
-directory = "./dist"

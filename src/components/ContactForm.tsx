@@ -4,11 +4,11 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 export default function ContactForm() {
   const { register, handleSubmit, setValue } = useForm();
   
-  const onHCaptchaChange = (token) => {
+  const onHCaptchaChange = (token: string) => {
     setValue("h-captcha-response", token);
   };
   
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     
     // Convert data to FormData
     const formData = new FormData();
