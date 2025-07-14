@@ -1,55 +1,42 @@
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function ContactForm() {
-  const [result, setResult] = useState<string | null>(null);
-
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-
-    // Validation for compulsory fields
-    const requiredFields = ["name", "last_name", "email", "message"];
-    const missingFields = requiredFields.filter(
-      (field) => !formData.get(field)?.toString().trim()
-    );
-
-    if (missingFields.length > 0) {
-      setResult("Please fill out all required fields.");
-      setTimeout(() => setResult(null), 5000);
-      return;
-    }
-
+  const { register, handleSubmit, setValue } = useForm();
+  
+  const onHCaptchaChange = (token) => {
+    setValue("h-captcha-response", token);
+  };
+  
+  const onSubmit = async (data) => {
+    
+    // Convert data to FormData
+    const formData = new FormData();
+    Object.keys(data).forEach(key => {
+      formData.append(key, data[key]);
+    });
+    
+    // Add your Web3Forms access key
     formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
-
-    const json = JSON.stringify(Object.fromEntries(formData.entries()));
-    setResult("Please wait...");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: json
+        body: formData
       });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setResult("Message sent successfully!");
-        form.reset();
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        // Handle success
+        console.log("Form submitted successfully!");
       } else {
-        setResult(data.message || "Something went wrong.");
+        // Handle error
+        console.error("Form submission failed:", result.message);
       }
     } catch (error) {
-      console.error(error);
-      setResult("An error occurred. Please try again.");
+      console.error("Error submitting form:", error);
     }
-
-    setTimeout(() => setResult(null), 5000);
   };
 
   return (
@@ -64,9 +51,10 @@ export default function ContactForm() {
       </div>
 
       <form 
-        onSubmit={onSubmit} 
+        id="contactForm"
+        onSubmit={handleSubmit(onSubmit)}
         className="space-y-6 mt-6"
-        method="POST">
+        >
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full text-text text-md">
             <label className="block mb-1">
@@ -74,10 +62,9 @@ export default function ContactForm() {
             </label>
             <input
               type="text"
-              name="name"
-              required
               placeholder="John"
               className="w-full px-3 py-2 border border-gray-600 bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              {...register("name", { required: true })}
             />
           </div>
           <div className="w-full">
@@ -86,10 +73,9 @@ export default function ContactForm() {
             </label>
             <input
               type="text"
-              name="last_name"
-              required
               placeholder="Doe"
               className="w-full px-3 py-2 border border-gray-600 bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              {...register("last_name", { required: true })}
             />
           </div>
         </div>
@@ -101,10 +87,9 @@ export default function ContactForm() {
             </label>
             <input
               type="email"
-              name="email"
-              required
               placeholder="you@example.com"
               className="w-full px-3 py-2 border border-gray-600 bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              {...register("email", { required: true })}
             />
           </div>
           <div className="w-full">
@@ -113,9 +98,9 @@ export default function ContactForm() {
             </label>
             <input
               type="text"
-              name="phone"
               placeholder="+65 1234 5678"
               className="w-full px-3 py-2 border border-gray-600 bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              {...register("phone")}
             />
           </div>
         </div>
@@ -125,15 +110,21 @@ export default function ContactForm() {
             Message <span className="text-red-500">*</span>
           </label>
           <textarea
-            name="message"
             rows={5}
-            required
             placeholder="Write your message here..."
             className="w-full px-3 py-2 border border-gray-600 bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+            {...register("message", { required: true })}
           ></textarea>
         </div>
 
-        <div className="h-captcha justify-center" data-theme="dark" data-sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}></div>
+        <div className="flex justify-center">
+          <HCaptcha
+            sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+            theme="dark"
+            reCaptchaCompat={false}
+            onVerify={onHCaptchaChange}
+          />
+        </div>
         <div className="flex justify-center ">
           <button
             type="submit"
@@ -160,12 +151,6 @@ export default function ContactForm() {
             </svg>
           </button>
         </div>
-
-        {result && (
-          <p className="text-center text-sm text-gray-700 dark:text-gray-300 mt-4">
-            {result}
-          </p>
-        )}
       </form>
     </div>
   );
