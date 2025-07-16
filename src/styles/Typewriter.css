@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+.typewriter {
+  --caret: currentcolor;
+  position: relative;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+/* Optional: thicker caret variant */
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+/* Optional: no caret variant */
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+@keyframes typing {
+  0%, 25% { content: ""; }
+  1%, 24% { content: "D"; }
+  2%, 23% { content: "De"; }
+  3%, 22% { content: "Dev"; }
+  4%, 21% { content: "Deve"; }
+  5%, 20% { content: "Devel"; }
+  6%, 19% { content: "Develo"; }
+  7%, 18% { content: "Develop"; }
+  8%, 17% { content: "Develope"; }
+  9%, 16% { content: "Developer"; }
+
+  26%, 50% { content: ""; }
+  27%, 49% { content: "L"; }
+  28%, 48% { content: "Le"; }
+  29%, 47% { content: "Lea"; }
+  30%, 46% { content: "Lead"; }
+  31%, 45% { content: "Leade"; }
+  32%, 44% { content: "Leader"; }
+
+  51%, 75% { content: ""; }
+  52%, 74% { content: "A"; }
+  53%, 73% { content: "Ad"; }
+  54%, 72% { content: "Adv"; }
+  55%, 71% { content: "Adve"; }
+  56%, 70% { content: "Adven"; }
+  57%, 69% { content: "Advent"; }
+  58%, 68% { content: "Adventu"; }
+  59%, 67% { content: "Adventur"; }
+  60%, 66% { content: "Adventure"; }
+  61%, 65% { content: "Adventurer"; }
+
+  76%, 100% { content: ""; }
+  77%, 99% { content: "L"; }
+  78%, 98% { content: "Le"; }
+  79%, 97% { content: "Lea"; }
+  80%, 96% { content: "Lear"; }
+  81%, 95% { content: "Learn"; }
+  82%, 94% { content: "Learne"; }
+  83%, 93% { content: "Learner"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+
+  @keyframes sequencePopup {
+    0%, 100% { content: "Developer"; }
+    25% { content: "Leader"; }
+    50% { content: "Adventurer"; }
+    75% { content: "Learner"; }
+  }
+
+  .typewriter::before {
+    content: "Developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}

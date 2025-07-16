@@ -1,5 +1,6 @@
 import SocialLinks from "../components/Socials";
 import { FaArrowRight } from "react-icons/fa";
+import '../styles/Typewriter.css';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
           Sean Hardjanto
         </h1>
         <h2 className="text-4xl md:text-5xl mb-6 md:mb-2 font-heading font-bold text-text">
-          Web Developer
+          <span className="typewriter" />
         </h2>
         <p className="text-lg md:text-2xl font-normal text-text md:mt-4 mb-6 md:mx-24">
           Dedicated to coming up with useful digital solutions as well as crafting experiences that are fun for me to make and great for you to use.
