@@ -55,9 +55,9 @@ export default function Navbar() {
         <a
           href="#home"
           onClick={(e) => handleLinkClick(e, "#home")}
-          className="text-2xl font-bold font-heading text-text"
+          className="flex items-center"
         >
-          34cats
+          <img src="/34cats_main.png" alt="34cats" className="h-10 sm:h-12" />
         </a>
 
         {/* Desktop menu */}
