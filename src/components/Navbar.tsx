@@ -4,6 +4,7 @@ const navItems = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -17,14 +18,19 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20);
 
       let current = "";
+      let minDistance = Infinity;
+      
       for (const item of navItems) {
         const id = item.href.substring(1);
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
+          const distance = Math.abs(rect.top);
+          
+          // Check if section is in viewport and closest to top
+          if (rect.top <= 100 && rect.bottom >= 0 && distance < minDistance) {
             current = id;
-            break;
+            minDistance = distance;
           }
         }
       }
