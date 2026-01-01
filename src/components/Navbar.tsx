@@ -9,6 +9,12 @@ const navItems = [
   { href: "#contact", label: "Contact" },
 ];
 
+const leftNavItems = [
+  { href: "/resume", label: "Resume", external: false },
+  { href: "https://apps.34cats.com", label: "Apps", external: true },
+  { href: "https://blog.34cats.com", label: "Blog", external: true },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,13 +73,41 @@ export default function Navbar() {
         ${isScrolled || isOpen ? "bg-navbar/95 backdrop-blur-md border-secondary" : "border-transparent"}`}
     >
       <div className="max-w-screen-xl mx-auto flex justify-between items-center h-16 sm:h-20">
-        <a
-          href="#home"
-          onClick={(e) => handleLinkClick(e, "#home")}
-          className="flex items-center"
-        >
-          <img src="/34cats_main.png" alt="34cats" className="h-10 sm:h-12" />
-        </a>
+        <div className="flex items-center gap-6">
+          <a
+            href="#home"
+            onClick={(e) => handleLinkClick(e, "#home")}
+            className="flex items-center"
+          >
+            <img src="/34cats_main.png" alt="34cats" className="h-10 sm:h-12" />
+          </a>
+
+          {/* Left side links - Desktop only */}
+          <div className="hidden md:flex space-x-4 font-body text-lg">
+            {leftNavItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => {
+                  if (!item.external) {
+                    e.preventDefault();
+                    navigate(item.href);
+                    setIsOpen(false);
+                  }
+                }}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className={`px-3 py-2 rounded font-semibold transition-colors ${
+                  location.pathname === item.href && !item.external
+                    ? "text-text-secondary bg-accent bg-opacity-20"
+                    : "text-text hover:bg-slate-700/30"
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
 
         {/* Desktop menu */}
         <div className="hidden md:flex space-x-6 font-body text-xl">
@@ -113,6 +147,29 @@ export default function Navbar() {
         `}
       >
         <div className="p-4 shadow-lg backdrop-blur-none border-t border-slate-700/60">
+          {leftNavItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(e) => {
+                if (!item.external) {
+                  e.preventDefault();
+                  navigate(item.href);
+                  setIsOpen(false);
+                }
+              }}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
+              className={`block px-4 py-2 rounded-md text-base font-bold text-lg transition-colors ${
+                location.pathname === item.href && !item.external
+                  ? "text-teal-300 bg-teal-500/20"
+                  : "text-slate-200 hover:text-white hover:bg-slate-700/40"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+          <hr className="my-2 border-slate-700/60" />
           {navItems.map((item) => (
             <a
               key={item.href}
