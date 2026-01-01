@@ -138,7 +138,7 @@ export default function ContactForm() {
         <div className="flex justify-center ">
           <button
             type="submit"
-            className="relative group flex items-center gap-1 px-10 py-4 border-[4px] border-transparent font-semibold text-[16px] bg-inherit rounded-full text-text shadow-[0_0_0_2px] shadow-accent cursor-pointer overflow-hidden transition-all duration-[50ms] ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95 hover:rounded-[12px] hover:shadow-[0_0_0_12px_transparent]"
+            className="relative group flex items-center gap-1 px-10 py-4 border-[4px] border-transparent font-semibold text-[16px] bg-inherit rounded-full text-text shadow-[0_0_0_2px] shadow-accent cursor-pointer overflow-hidden transition-all duration-[50ms] ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95 hover:shadow-[0_0_0_12px_transparent]"
           >
             <svg
               viewBox="0 0 24 24"

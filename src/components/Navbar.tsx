@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { href: "#home", label: "Home" },
@@ -12,6 +13,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +50,13 @@ export default function Navbar() {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const id = href.substring(1);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/' + href);
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
     setIsOpen(false);
   };
 
@@ -71,7 +80,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={'/' + item.href}
               onClick={(e) => handleLinkClick(e, item.href)}
               className={`px-4 py-2 rounded font-semibold transition-colors ${
                 activeSection === item.href.substring(1)
@@ -107,7 +116,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={'/' + item.href}
               onClick={(e) => handleLinkClick(e, item.href)}
               className={`block px-4 py-2 rounded-md text-base font-bold text-lg transition-colors ${
                 activeSection === item.href.substring(1)

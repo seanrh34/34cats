@@ -9,8 +9,7 @@ import CursorAura from "./components/CursorAura";
 
 // Pages
 import Main from './pages/Main'
-import App1Page from './pages/App1Page'
-import App2Page from './pages/App2Page'
+import Resume from './pages/Resume'
 
 import ScrollToHash from './components/ScrollToHash';
 
@@ -24,8 +23,7 @@ function App() {
         <main className="pt-20">
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/app1" element={<App1Page />} />
-            <Route path="/app2" element={<App2Page />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </main>
         <Footer />
