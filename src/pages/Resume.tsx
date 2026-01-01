@@ -37,7 +37,7 @@ export default function Resume() {
         <div className="flex flex-col items-center" ref={containerRef}>
           <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-4 w-full">
             <Document
-              file="/seanh_resume.pdf"
+              file="/seanhardjanto_resume.pdf"
               onLoadSuccess={onDocumentLoadSuccess}
               className="flex justify-center"
             >
@@ -74,7 +74,7 @@ export default function Resume() {
           )}
 
           <a
-            href="/seanh_resume.pdf"
+            href="/seanhardjanto_resume.pdf"
             download
             className="relative group inline-flex items-center gap-1 px-10 py-4 mt-6 border-[4px] border-transparent font-semibold text-[16px] bg-inherit rounded-full text-text shadow-[0_0_0_2px] shadow-accent cursor-pointer overflow-hidden transition-all duration-[50ms] ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95 hover:shadow-[0_0_0_12px_transparent]"
           >

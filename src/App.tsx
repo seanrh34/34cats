@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CursorAura from "./components/CursorAura";
+import DownloadResumeButton from './components/DownloadResumeButton';
 
 
 // Pages
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <CursorAura />
       <ScrollToHash />
+      <DownloadResumeButton />
       <div className="min-h-screen bg-background text-text font-body">
         <Navbar />
         <main className="pt-20">
