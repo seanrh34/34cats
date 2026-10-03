@@ -569,7 +569,9 @@
   height: 100vh;
   height: 100svh;
   display: flex;
-  align-items: center;
+  /* Top-align (clearing the floating nav) so there's no dead band under the heading. */
+  align-items: flex-start;
+  padding-top: 6.5rem;
   overflow: hidden;
 }
 
@@ -687,19 +689,19 @@
 }
 
 .case-block p,
-.case-block li {
+.case-block li:not(.chip) {
   margin: 0;
   color: var(--ink);
   font-size: 0.95rem;
   line-height: 1.7;
 }
 
-.case-block ul {
+.case-block ul:not(.tag-chips) {
   margin: 0;
   padding-left: 1.1rem;
 }
 
-.case-block ul li + li {
+.case-block ul:not(.tag-chips) li + li {
   margin-top: 0.45rem;
 }
 

@@ -194,7 +194,7 @@ function PaletteInner({ onClose }: { onClose: () => void }) {
 
   const filtered = useMemo(() => {
     if (!query.trim()) return commands;
-    return commands
+    const ranked = commands
       .map((command) => {
         const score = fuzzyScore(query.trim(), `${command.label} ${command.keywords ?? ""}`);
         return score === null ? null : { command, score };
@@ -202,6 +202,9 @@ function PaletteInner({ onClose }: { onClose: () => void }) {
       .filter((entry): entry is { command: Command; score: number } => entry !== null)
       .sort((a, b) => b.score - a.score)
       .map((entry) => entry.command);
+    // Keep groups contiguous (so arrow-key order matches what's rendered), ordered by each group's best match.
+    const groupOrder = [...new Set(ranked.map((command) => command.group))];
+    return groupOrder.flatMap((group) => ranked.filter((command) => command.group === group));
   }, [commands, query]);
 
   const selectedIndex = Math.min(selected, Math.max(0, filtered.length - 1));
@@ -239,7 +242,7 @@ function PaletteInner({ onClose }: { onClose: () => void }) {
     item?.scrollIntoView({ block: "nearest" });
   }, [selectedIndex]);
 
-  const groups: Command["group"][] = ["Section", "Action", "Site"];
+  const groups = [...new Set(filtered.map((command) => command.group))];
 
   return (
     <div className="palette-root" role="presentation">
