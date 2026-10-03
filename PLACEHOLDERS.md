@@ -33,7 +33,10 @@ Drop-in replacements: keep the same filename (or change `image`/`gallery` paths 
 | `project-placeholder.svg` | Work card for the placeholder project | Real screenshot (16:10) |
 | `gallery-*.svg` (10 files) | Case-study gallery strips | Real product screenshots (16:10) |
 
-## Optional media
+## Videos (`public/videos/`)
 
-- `Project.video` field exists but is unused — set it to a `/public` clip path
-  (e.g. `/videos/genai-seo-writer.mp4`) and the work card will loop it on hover.
+| File | Used by | Replace with |
+| --- | --- | --- |
+| `placeholder-demo.webm` | Hover video on the "34cats.com" and "Project Placeholder" work cards | Real screen recordings (16:10, muted, a few seconds, ideally < 2 MB) |
+
+Any project can get a hover video: set `video: "/videos/<name>.webm"` (or `.mp4`) on it in `app/data.ts`.

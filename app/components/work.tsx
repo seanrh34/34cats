@@ -202,6 +202,7 @@ function ProjectCard({
             <video
               ref={videoRef}
               src={asset(project.video)}
+              poster={asset(project.image)}
               muted
               loop
               playsInline

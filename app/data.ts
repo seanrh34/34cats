@@ -211,6 +211,7 @@ export const projects: Project[] = [
     year: "2026",
     association: "Personal · design + build",
     image: "/placeholders/project-34cats.svg",
+    video: "/videos/placeholder-demo.webm",
     url: "https://34cats.com",
     tech: ["TypeScript", "React", "Next.js", "CSS", "Motion"],
     caseStudy: {
@@ -240,6 +241,7 @@ export const projects: Project[] = [
     year: "TBD",
     association: "NUS · module project (placeholder)",
     image: "/placeholders/project-placeholder.svg",
+    video: "/videos/placeholder-demo.webm",
     placeholder: true,
     tech: ["TypeScript", "React", "Canvas"],
     caseStudy: {
