@@ -1,0 +1,64 @@
+/* ————— Design tokens ————— */
+
+:root {
+  /* type */
+  --font-display: var(--font-serif), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* night-shift (default) */
+  --bg: #0a0a0f;
+  --bg-soft: #0e0e15;
+  --card: #12121b;
+  --card-2: #161622;
+  --ink: #f3efe8;
+  --muted: #9a978f;
+  --faint: #6a675f;
+  --line: rgba(243, 239, 232, 0.12);
+  --line-strong: rgba(243, 239, 232, 0.26);
+
+  --accent: #ff8a3d;          /* fills, glows, decorative */
+  --accent-text: #ffa25f;     /* coloured text, AA on dark bg */
+  --accent-ink: #1d1004;      /* text on accent fills */
+  --accent-dim: rgba(255, 138, 61, 0.14);
+  --mint: #7ef0c4;
+  --mint-text: #8ff2ca;
+  --mint-dim: rgba(126, 240, 196, 0.12);
+
+  --glow: 0 10px 42px rgba(255, 138, 61, 0.22);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --glass: rgba(14, 14, 21, 0.72);
+
+  /* layout */
+  --max: 1160px;
+  --gutter: max(1.25rem, calc((100vw - var(--max)) / 2));
+  --radius: 20px;
+  --radius-sm: 12px;
+  --pill: 999px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="light"] {
+  --bg: #f5f1ea;
+  --bg-soft: #efe9df;
+  --card: #fffdf8;
+  --card-2: #faf6ee;
+  --ink: #221d15;
+  --muted: #6d675c;
+  --faint: #98917f;
+  --line: rgba(34, 29, 21, 0.14);
+  --line-strong: rgba(34, 29, 21, 0.32);
+
+  --accent: #ff8a3d;
+  --accent-text: #b05808;     /* AA on warm paper */
+  --accent-ink: #261203;
+  --accent-dim: rgba(194, 92, 16, 0.12);
+  --mint: #7ef0c4;
+  --mint-text: #0a7d59;
+  --mint-dim: rgba(10, 125, 89, 0.1);
+
+  --glow: 0 10px 34px rgba(194, 92, 16, 0.25);
+  --shadow: 0 24px 60px rgba(70, 55, 30, 0.18);
+  --glass: rgba(250, 246, 238, 0.78);
+}

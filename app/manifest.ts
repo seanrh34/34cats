@@ -1,16 +1,17 @@
 import type { MetadataRoute } from "next";
+import { asset } from "./data";
 
 export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sean Hardjanto — Product Engineer",
-    short_name: "Sean Hardjanto",
-    description: "Portfolio of Sean Richardson Hardjanto, product engineer in Singapore.",
-    start_url: "/seanhardjanto.com/",
+    name: "Sean Hardjanto — 34cats",
+    short_name: "34cats",
+    description: "Portfolio of Sean Richardson Hardjanto — full-stack product engineer & NUS CS student in Singapore.",
+    start_url: asset("/"),
     display: "standalone",
-    background_color: "#f2f0e9",
-    theme_color: "#101813",
-    icons: [{ src: "/seanhardjanto.com/34cats_svg.svg", sizes: "any", type: "image/svg+xml" }],
+    background_color: "#0a0a0f",
+    theme_color: "#0a0a0f",
+    icons: [{ src: asset("/34cats_svg.svg"), sizes: "any", type: "image/svg+xml" }],
   };
 }

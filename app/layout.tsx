@@ -1,23 +1,42 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { basePath, siteUrl } from "./data";
-import "./styles.css";
+import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { SiteChrome } from "./components/site-chrome";
+import { asset, siteUrl } from "./data";
+import "./styles/tokens.css";
+import "./styles/base.css";
+import "./styles/chrome.css";
+import "./styles/sections.css";
+
+const sans = Inter_Tight({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+
+const title = "Sean Hardjanto — Full-stack Product Engineer";
+const description =
+  "Sean Richardson Hardjanto is a full-stack product engineer and NUS Computer Science student in Singapore, shipping products at Guidesify and hunting side quests at 2am.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sean Hardjanto — Forward-Deployed Product Engineer",
+    default: title,
     template: "%s · Sean Hardjanto",
   },
-  description:
-    "Sean Richardson Hardjanto is a Singapore-based product engineer building useful web products across customer needs, software, data, and deployment.",
+  description,
   keywords: [
     "Sean Hardjanto",
     "Sean Richardson Hardjanto",
-    "forward deployed engineer Singapore",
-    "product engineer Singapore",
+    "34cats",
     "full stack developer Singapore",
+    "product engineer Singapore",
     "NUS computer science",
+    "Guidesify",
   ],
   authors: [{ name: "Sean Richardson Hardjanto", url: siteUrl }],
   creator: "Sean Richardson Hardjanto",
@@ -25,13 +44,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: "/",
-    title: "Sean Hardjanto — Forward-Deployed Product Engineer",
-    description:
-      "I work where customer problems meet product, software, and deployment.",
-    siteName: "Sean Hardjanto",
+    title,
+    description: "Full-stack product engineer & NUS CS student. Proudest ship: the GenAI SEO Writer at Guidesify.",
+    siteName: "34cats",
     images: [
       {
-        url: "/images/sean_photo_resized.jpg",
+        url: asset("/images/sean_photo_resized.jpg"),
         width: 1200,
         height: 1200,
         alt: "Sean Richardson Hardjanto",
@@ -40,24 +58,45 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sean Hardjanto — Forward-Deployed Product Engineer",
-    description:
-      "I work where customer problems meet product, software, and deployment.",
-    images: ["/images/sean_photo_resized.jpg"],
+    title,
+    description: "Full-stack product engineer & NUS CS student in Singapore.",
+    images: [asset("/images/sean_photo_resized.jpg")],
   },
   robots: { index: true, follow: true },
-  icons: { icon: `${basePath}/34cats_svg.svg` },
+  icons: { icon: asset("/34cats_svg.svg") },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#101813",
-  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f1ea" },
+  ],
+  colorScheme: "dark light",
 };
+
+const themeInit = `(function(){try{var t=localStorage.getItem("34cats-theme");if(t!=="light"&&t!=="dark")t="dark";document.documentElement.dataset.theme=t}catch(e){}})();`;
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en-SG">
-      <body>{children}</body>
+    <html
+      lang="en-SG"
+      data-theme="dark"
+      className={`${sans.variable} ${serif.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        <script id="theme-init" dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html:
+              "<style>[data-reveal]{opacity:1 !important;transform:none !important;}.hero-caret{display:none !important;}</style>",
+          }}
+        />
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <SiteChrome>{children}</SiteChrome>
+      </body>
     </html>
   );
 }

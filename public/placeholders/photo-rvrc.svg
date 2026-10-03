@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="448" height="560" viewBox="0 0 448 560" role="img" aria-label="PLACEHOLDER · RVRC orientation photo · 4:5 (placeholder image)">
+  <title>PLACEHOLDER · RVRC orientation photo · 4:5 — placeholder image</title>
+  <defs>
+    <linearGradient id="g11" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(25 55% 26%)"/>
+      <stop offset="1" stop-color="hsl(45 60% 15%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="448" height="560" fill="url(#g11)"/>
+  <circle cx="309.5" cy="161.4" r="104" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.2"/>
+  <circle cx="162.9" cy="492.2" r="73" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.2"/>
+  <circle cx="228.0" cy="129.5" r="39" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.2"/>
+  <circle cx="0.0" cy="250.3" r="1.7" fill="#0a0a0f" opacity="0.05"/>
+  <circle cx="385.5" cy="228.8" r="2.1" fill="#ffffff" opacity="0.10"/>
+  <circle cx="211.6" cy="157.7" r="1.5" fill="#ffffff" opacity="0.12"/>
+  <circle cx="63.0" cy="213.0" r="2.3" fill="#0a0a0f" opacity="0.13"/>
+  <circle cx="171.4" cy="47.4" r="1.5" fill="#ffffff" opacity="0.12"/>
+  <circle cx="265.4" cy="310.5" r="2.1" fill="#ffffff" opacity="0.07"/>
+  <circle cx="137.9" cy="445.9" r="1.0" fill="#0a0a0f" opacity="0.07"/>
+  <circle cx="258.0" cy="399.3" r="1.0" fill="#ffffff" opacity="0.09"/>
+  <circle cx="397.4" cy="292.4" r="1.2" fill="#ffffff" opacity="0.11"/>
+  <circle cx="429.6" cy="179.5" r="3.0" fill="#0a0a0f" opacity="0.05"/>
+  <circle cx="321.4" cy="452.5" r="3.1" fill="#ffffff" opacity="0.08"/>
+  <circle cx="74.7" cy="447.7" r="3.1" fill="#ffffff" opacity="0.12"/>
+  <circle cx="447.9" cy="448.3" r="1.9" fill="#0a0a0f" opacity="0.08"/>
+  <circle cx="275.8" cy="13.4" r="3.1" fill="#ffffff" opacity="0.13"/>
+  <circle cx="157.6" cy="489.6" r="1.0" fill="#ffffff" opacity="0.12"/>
+  <circle cx="426.1" cy="307.9" r="2.5" fill="#0a0a0f" opacity="0.10"/>
+  <circle cx="382.2" cy="242.9" r="3.0" fill="#ffffff" opacity="0.15"/>
+  <circle cx="190.6" cy="454.3" r="2.1" fill="#ffffff" opacity="0.07"/>
+  <circle cx="21.5" cy="29.1" r="2.8" fill="#0a0a0f" opacity="0.06"/>
+  <circle cx="157.1" cy="308.5" r="1.8" fill="#ffffff" opacity="0.10"/>
+  <circle cx="47.5" cy="212.3" r="1.4" fill="#ffffff" opacity="0.11"/>
+  <circle cx="246.7" cy="518.0" r="1.2" fill="#0a0a0f" opacity="0.15"/>
+  <circle cx="445.3" cy="433.6" r="2.2" fill="#ffffff" opacity="0.09"/>
+  <circle cx="385.8" cy="361.8" r="2.1" fill="#ffffff" opacity="0.08"/>
+  <circle cx="238.7" cy="143.7" r="3.1" fill="#0a0a0f" opacity="0.11"/>
+  <circle cx="407.8" cy="82.4" r="1.4" fill="#ffffff" opacity="0.15"/>
+  <g opacity="0.92">
+    <rect x="14" y="522" width="316.2" height="26" rx="13" fill="#0a0a0f" fill-opacity="0.55"/>
+    <text x="23" y="539" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.5" fill="#f3efe8" fill-opacity="0.85">PLACEHOLDER · RVRC orientation photo · 4:5</text>
+  </g>
+</svg>
