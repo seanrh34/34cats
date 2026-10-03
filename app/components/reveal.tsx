@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
-import type { ReactNode } from "react";
+import { motion, useInView } from "motion/react";
+import { useRef, type ReactNode } from "react";
 import { useAnimationsEnabled } from "./lib";
 
 type RevealProps = {
@@ -64,6 +64,9 @@ type SplitWordsProps = {
 /** Heading whose words rise in, staggered. */
 export function SplitWords({ text, className, accent = [], delay = 0 }: SplitWordsProps) {
   const animate = useAnimationsEnabled();
+  // Observe the heading once: per-word observers never fire because each word starts clipped by its mask.
+  const ref = useRef<HTMLHeadingElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -10% 0px" });
   const lines = text.split("\n");
   const accentSet = new Set(accent.map((word) => word.toLowerCase()));
   let wordIndex = 0;
@@ -81,8 +84,7 @@ export function SplitWords({ text, className, accent = [], delay = 0 }: SplitWor
                 className={`word ${isAccent ? "display-em" : ""}`}
                 style={{ display: "inline-block", willChange: "transform" }}
                 initial={{ y: "115%", rotate: 4 }}
-                whileInView={{ y: "0%", rotate: 0 }}
-                viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+                animate={inView ? { y: "0%", rotate: 0 } : { y: "115%", rotate: 4 }}
                 transition={{ duration: 0.72, delay: delay + i * 0.05, ease: EASE }}
               >
                 {word}
@@ -100,5 +102,9 @@ export function SplitWords({ text, className, accent = [], delay = 0 }: SplitWor
     </span>
   ));
 
-  return <h2 className={className}>{words}</h2>;
+  return (
+    <h2 ref={ref} className={className}>
+      {words}
+    </h2>
+  );
 }

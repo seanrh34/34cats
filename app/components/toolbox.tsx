@@ -105,7 +105,7 @@ export function Toolbox() {
               initial={false}
               exit={{ opacity: 0 }}
             >
-              select a chip above — the cross-reference builds itself from the projects and roles data.
+              Pick a skill above to see the projects and roles where it actually shipped.
             </motion.p>
           )}
         </AnimatePresence>

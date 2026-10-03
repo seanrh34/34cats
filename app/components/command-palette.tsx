@@ -12,12 +12,15 @@ import {
   useState,
 } from "react";
 import type { ReactNode } from "react";
-import { asset, basePath, sectionAnchors, site } from "../data";
+import { asset, sectionAnchors, site } from "../data";
 import { useDialogBehavior, useTheme } from "./lib";
 import { useToast } from "./toast";
 
 type PaletteApi = { open: () => void; isOpen: boolean };
 const PaletteContext = createContext<PaletteApi>({ open: () => {}, isOpen: false });
+
+/** Lowercase and strip diacritics so "res" matches "Résumé". */
+const fold = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
 export function usePalette(): PaletteApi {
   return useContext(PaletteContext);
@@ -35,13 +38,13 @@ type Command = {
 /** Subsequence fuzzy match with a small scoring bonus for word starts. */
 function fuzzyScore(query: string, target: string): number | null {
   if (!query) return 0;
-  const q = query.toLowerCase();
-  const t = target.toLowerCase();
+  const q = fold(query);
+  const t = fold(target);
   let qi = 0;
   let score = 0;
   let streak = 0;
   for (let ti = 0; ti < t.length && qi < q.length; ti++) {
-    if (t[ti] === q[ti]) {
+    if (t[ti] === q[qi]) {
       qi++;
       streak++;
       score += 1 + streak * 0.5 + (ti === 0 || t[ti - 1] === " " || t[ti - 1] === "/" ? 2 : 0);
@@ -114,7 +117,7 @@ function PaletteInner({ onClose }: { onClose: () => void }) {
       if (el) {
         el.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
       } else {
-        router.push(`${basePath || ""}/#${anchorId}`);
+        router.push(`/#${anchorId}`);
       }
     },
     [router],
@@ -136,7 +139,7 @@ function PaletteInner({ onClose }: { onClose: () => void }) {
         hint: "page",
         group: "Action",
         keywords: "cv curriculum vitae resume",
-        run: () => router.push(`${basePath || ""}/resume`),
+        run: () => router.push("/resume"),
       },
       {
         id: "resume-download",

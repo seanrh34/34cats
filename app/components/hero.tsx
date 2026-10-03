@@ -51,7 +51,7 @@ export function Hero() {
           </h1>
           <p className="hero-line">
             <span aria-hidden="true">
-              I build <Typewriter />.
+              I build <Typewriter />
             </span>
             <span className="sr-only">I build {hero.phrases.join(". I build ")}.</span>
           </p>

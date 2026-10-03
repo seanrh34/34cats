@@ -98,6 +98,7 @@
   font-size: clamp(1.15rem, 2.4vw, 1.6rem);
   line-height: 1.4;
   color: var(--muted);
+  min-height: 2.8em;
 }
 
 .hero-type {
@@ -245,8 +246,8 @@
 
 .hero-cat {
   position: absolute;
-  right: max(1.2rem, var(--gutter));
-  bottom: 1.6rem;
+  left: 46%;
+  bottom: 2.4rem;
 }
 
 /* marquee */
@@ -262,7 +263,7 @@
 .marquee-cat {
   position: absolute;
   top: 0.6rem;
-  right: var(--gutter);
+  left: 38%;
   z-index: 2;
 }
 
@@ -361,14 +362,15 @@
 
 .stats-cat {
   position: absolute;
-  right: var(--gutter);
-  bottom: 0.9rem;
+  left: calc(var(--gutter) + 0.2rem);
+  bottom: 0.4rem;
 }
 
 /* work */
 
 .work-stack {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.6rem;
 }
 
@@ -555,6 +557,11 @@
 }
 
 /* horizontal rail (desktop) */
+
+/* Break out of the section's gutter padding so cards travel edge to edge. */
+.work-rail {
+  margin-inline: calc(-1 * var(--gutter));
+}
 
 .work-rail-sticky {
   position: sticky;
@@ -1000,8 +1007,8 @@
 
 .education-cat {
   position: absolute;
-  right: var(--gutter);
-  bottom: 1rem;
+  left: 50%;
+  bottom: 1.4rem;
 }
 
 /* toolbox */
@@ -1148,8 +1155,8 @@
 
 .toolbox-cat {
   position: absolute;
-  right: var(--gutter);
-  bottom: 1rem;
+  left: calc(var(--gutter) + 0.2rem);
+  bottom: 1.6rem;
 }
 
 /* polaroids */
@@ -1268,8 +1275,8 @@
 
 .offclock-cat {
   position: absolute;
-  right: var(--gutter);
-  top: 1rem;
+  left: 18%;
+  top: 3.2rem;
 }
 
 /* now */
@@ -1488,8 +1495,8 @@
 
 .contact-cat {
   position: absolute;
-  right: var(--gutter);
-  bottom: 1.2rem;
+  right: 22%;
+  bottom: 3.4rem;
 }
 
 /* footer */

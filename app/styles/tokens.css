@@ -4,7 +4,7 @@
   /* type */
   --font-display: var(--font-serif), Georgia, "Times New Roman", serif;
   --font-body: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 
   /* night-shift (default) */
   --bg: #0a0a0f;

@@ -79,7 +79,7 @@ export type Stat = {
 export const stats: Stat[] = [
   { value: 2, suffix: "+", label: "yrs shipping at Guidesify", footnote: "Intern, then freelance — still going" },
   { value: 200, suffix: "+", label: "freshmen onboarded", footnote: "RVRC orientation · vice project director" },
-  { value: 3, label: "languages spoken", footnote: "English · Bahasa Indonesia · 中文", placeholder: true },
+  { value: 3, label: "languages spoken", footnote: "English · Bahasa Indonesia · Mandarin", placeholder: true },
   { value: 85, suffix: "/90", label: "A-Level rank points", footnote: "Hwa Chong Institution · 2021" },
 ];
 

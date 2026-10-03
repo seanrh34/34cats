@@ -232,13 +232,15 @@ canvas {
 .placeholder-flag {
   display: inline-flex;
   align-items: center;
-  padding: 0.18rem 0.5rem;
+  padding: 0.12rem 0.4rem;
   border-radius: var(--pill);
   background: var(--mint-dim);
-  border: 1px solid var(--mint);
+  border: 1px solid color-mix(in srgb, var(--mint) 55%, transparent);
   color: var(--mint-text);
-  font: 600 0.58rem/1.2 var(--font-mono);
-  letter-spacing: 0.14em;
+  font: 600 0.5rem/1.2 var(--font-mono);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  vertical-align: middle;
   text-transform: uppercase;
 }
 

@@ -16,7 +16,7 @@ const serif = Instrument_Serif({
   variable: "--font-serif",
   display: "swap",
 });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
 const title = "Sean Hardjanto — Full-stack Product Engineer";
 const description =

@@ -66,8 +66,7 @@ export function Nav() {
                     {isActive && !reduced ? (
                       <motion.span layoutId="nav-active-pill" className="nav-active-pill" transition={{ type: "spring", stiffness: 420, damping: 34 }} />
                     ) : null}
-                    <span className="nav-link-num">{link.num}</span>
-                    {link.label}
+                                        {link.label}
                   </Link>
                 </li>
               );
