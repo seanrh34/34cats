@@ -8,7 +8,7 @@ Items marked `placeholder: true` in `app/data.ts` render a small mint "PLACEHOLD
 | Key | What it is | Replace with |
 | --- | --- | --- |
 | `status` | "Open to Summer 2027 internships" chip in the hero | The real target roles/season |
-| `stats[2]` | "3 languages spoken — English · Bahasa Indonesia · 中文" | The actual three languages |
+| `stats[2]` | "3 languages spoken — English · Bahasa Indonesia · Mandarin" | The actual three languages |
 | `projects[4]` ("Project Placeholder") | Whole placeholder project card + case study | A real 5th project (orbital/CS module or similar) |
 | `projects[3].image` | Card screenshot for "34cats.com — this site" | A real screenshot of the shipped site |
 | `projects[*].caseStudy.metrics[placeholder]` | "—%", "—ms", "—" metric cells | Real measured numbers |
