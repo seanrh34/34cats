@@ -35,13 +35,13 @@ export const status = {
 export const hero = {
   name: "Sean Hardjanto",
   phrases: [
-    "products people actually use",
-    "tools for messy real-world workflows",
-    "things at 2am, then fix them at 9am",
-    "with a cat-sized sense of humour",
+    "web apps people use",
+    "tools for small teams",
+    "things that ship",
+    "sites with cats in them",
   ],
   intro:
-    "NUS Computer Science student who loves the front-end because it is where work comes to life — and who reads enough of the stack to know why. Proudest ship: the GenAI SEO Writer, still Guidesify\u2019s flagship product.",
+    "I\u2019m a Computer Science student at NUS, and I like the front-end best: it\u2019s where I get to see my work come to life. My proudest work so far is the GenAI SEO Writer, which I built at Guidesify and which is still their flagship product.",
 } as const;
 
 export const sectionAnchors = [
@@ -77,7 +77,7 @@ export type Stat = {
 };
 
 export const stats: Stat[] = [
-  { value: 2, suffix: "+", label: "yrs shipping at Guidesify", footnote: "Intern, then freelance — still going" },
+  { value: 2, suffix: "+", label: "yrs shipping at Guidesify", footnote: "Intern, then freelance. Still at it." },
   { value: 200, suffix: "+", label: "freshmen onboarded", footnote: "RVRC orientation · vice project director" },
   { value: 3, label: "languages spoken", footnote: "English · Bahasa Indonesia · Mandarin", placeholder: true },
   { value: 85, suffix: "/90", label: "A-Level rank points", footnote: "Hwa Chong Institution · 2021" },
@@ -116,27 +116,27 @@ export const projects: Project[] = [
     slug: "genai-seo-writer",
     title: "GenAI SEO Writer",
     pitch:
-      "Turns a brief into an SEO-ready article, then ships it to WordPress and Telegram — one focused product instead of a multi-tool shuffle.",
+      "Turns a brief into an SEO-ready article, then publishes it to WordPress and Telegram from the same place.",
     role: "Product engineer",
-    year: "Jun 2024 — present",
+    year: "Jun 2024–present",
     association: "Guidesify · flagship product",
     image: "/images/projects/genai-seo-writer.png",
     url: "https://app.guidesify.com/genai-seo-writer",
     tech: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "WordPress", "Telegram", "REST APIs"],
     caseStudy: {
       problem:
-        "Guidesify\u2019s content workflow lived across too many tools: research, drafting, SEO checks and publishing each happened somewhere different, so a single article cost an afternoon of copy-paste.",
+        "At Guidesify, research, drafting, SEO checks and publishing all happened in different tools, so one article could take an afternoon of copy-paste.",
       built: [
-        "An end-to-end writing flow that starts from a brief and an auto-generated outline",
-        "GenAI drafting with inline SEO guidance — keywords, structure, internal links — instead of a separate checklist",
+        "A writing flow that starts from a brief and an auto-generated outline",
+        "GenAI drafting with SEO guidance built in: keywords, structure and internal links",
         "One-click publishing to WordPress and Telegram straight from the draft",
         "A review queue so the team can edit before anything goes live",
       ],
       outcome:
-        "Reduced a multi-tool content workflow to one focused product. Still a flagship Guidesify product used by businesses today.",
+        "One product now covers the whole content workflow. Guidesify and its clients still use it today.",
       metrics: [
-        { value: "1", label: "product replacing a five-tool shuffle" },
-        { value: "—%", label: "faster article turnaround (add real figure)", placeholder: true },
+        { value: "1", label: "product for the whole content workflow" },
+        { value: "?", label: "faster article turnaround (add real figure)", placeholder: true },
       ],
       stack: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "WordPress", "Telegram", "REST APIs"],
       gallery: ["/placeholders/gallery-genai-seo-writer-1.svg", "/placeholders/gallery-genai-seo-writer-2.svg"],
@@ -146,7 +146,7 @@ export const projects: Project[] = [
   {
     slug: "uen-search",
     title: "UEN Search",
-    pitch: "A fast, legible search interface for finding ACRA-registered Singapore businesses by name or UEN.",
+    pitch: "A simple search tool for finding ACRA-registered Singapore businesses by name or UEN.",
     role: "Product engineer",
     year: "Apr 2024",
     association: "Guidesify · internship",
@@ -155,16 +155,16 @@ export const projects: Project[] = [
     tech: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs"],
     caseStudy: {
       problem:
-        "Singapore\u2019s public business registry is thorough but not friendly — finding a company by name or UEN meant fighting a form instead of just typing what you knew.",
+        "Singapore\u2019s public business registry is thorough but awkward to use. Finding a company by name or UEN meant working through a form.",
       built: [
         "Search-as-you-type over ACRA\u2019s REST API",
         "Plain-language result cards: status, entity type, registered activities",
-        "Deep-linkable result pages so an answer could be shared",
+        "Result pages with their own link, so you can share one",
       ],
-      outcome: "Made public business records useful to non-technical users — a small product that removed a real lookup pain.",
+      outcome: "Made public business records easier to use for non-technical people.",
       metrics: [
-        { value: "1", label: "search box replacing a government form" },
-        { value: "—ms", label: "median keystroke-to-result (add real figure)", placeholder: true },
+        { value: "1", label: "search box for business records" },
+        { value: "?", label: "median keystroke-to-result (add real figure)", placeholder: true },
       ],
       stack: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs"],
       gallery: ["/placeholders/gallery-uen-search-1.svg", "/placeholders/gallery-uen-search-2.svg"],
@@ -174,7 +174,7 @@ export const projects: Project[] = [
   {
     slug: "dozebuster",
     title: "DozeBuster",
-    pitch: "A computer-vision focus companion that turns attentiveness into a simple, actionable Doze Meter.",
+    pitch: "A computer-vision study companion with a live Doze Meter for spotting when you drift off.",
     role: "Full-stack build",
     year: "Jan 2025",
     association: "Hack&Roll 2025 · team mud",
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     repository: "https://github.com/seanrh34/team_mud",
     tech: ["React", "Next.js", "Tailwind CSS", "Python", "Computer Vision", "PostgreSQL"],
     caseStudy: {
-      problem: "Long study sessions fail quietly: you only find out you drifted off after the time is already gone.",
+      problem: "Long study sessions fail quietly: you only notice you drifted off after the time is gone.",
       built: [
         "A webcam attentiveness scorer built with Python and OpenCV",
         "A Next.js dashboard with a live Doze Meter and session timeline",
@@ -192,7 +192,7 @@ export const projects: Project[] = [
       outcome: "Built and demonstrated a working prototype in one hackathon weekend.",
       metrics: [
         { value: "48h", label: "from idea to demo at Hack&Roll 2025" },
-        { value: "—%", label: "drowsiness detection accuracy (add real figure)", placeholder: true },
+        { value: "?", label: "drowsiness detection accuracy (add real figure)", placeholder: true },
       ],
       stack: ["React", "Next.js", "Tailwind CSS", "Python", "OpenCV", "PostgreSQL"],
       gallery: ["/placeholders/gallery-dozbuster-1.svg", "/placeholders/gallery-dozbuster-2.svg"],
@@ -204,9 +204,9 @@ export const projects: Project[] = [
   },
   {
     slug: "34cats",
-    title: "34cats.com — this site",
+    title: "34cats.com · this site",
     pitch:
-      "The site you are on: a static-export Next.js portfolio with a dot-grid hero, a command palette, and a find-the-cats easter egg.",
+      "The site you\u2019re on. A static-export Next.js portfolio with a dot-grid hero, a command palette and a find-the-cats easter egg.",
     role: "Design + build",
     year: "2026",
     association: "Personal · design + build",
@@ -215,28 +215,28 @@ export const projects: Project[] = [
     url: "https://34cats.com",
     tech: ["TypeScript", "React", "Next.js", "CSS", "Motion"],
     caseStudy: {
-      problem: "My old portfolio was a single static page — accurate, but it said nothing about how I like to build.",
+      problem: "My old portfolio was a single static page. It was accurate, but it didn\u2019t show how I like to build.",
       built: [
         "A fully static Next.js 16 site themed like a night shift, with a warm-paper light mode",
         "Interactive chrome: command palette (⌘K), custom cursor, scroll progress, velocity-reactive marquee",
-        "A dot-grid canvas hero, a scroll-linked horizontal work showcase, a draggable polaroid pile",
-        "A find-the-cats easter egg (this card is a hint-free zone)",
+        "A dot-grid canvas hero, a horizontal work showcase that follows scroll, a draggable polaroid pile",
+        "A find-the-cats easter egg, hidden across the page",
       ],
       outcome:
-        "A portfolio that is itself a demo of what it claims: interaction design, accessibility, and performance on a static export.",
+        "A portfolio with the interaction, accessibility and performance I\u2019d want in any product.",
       metrics: [
-        { value: "0", label: "servers harmed (static export only)" },
-        { value: "—", label: "Lighthouse score (add after first deploy)", placeholder: true },
+        { value: "0", label: "servers needed (static export only)" },
+        { value: "?", label: "Lighthouse score (add after first deploy)", placeholder: true },
       ],
       stack: ["Next.js", "React", "TypeScript", "CSS", "Motion", "Canvas 2D"],
       gallery: ["/placeholders/gallery-34cats-1.svg", "/placeholders/gallery-34cats-2.svg"],
-      links: [{ label: "You are already here", href: "https://34cats.com" }],
+      links: [{ label: "Open the live site", href: "https://34cats.com" }],
     },
   },
   {
     slug: "project-placeholder",
     title: "Project Placeholder",
-    pitch: "Replace me — e.g. an N-body orbital playground from a CS module.",
+    pitch: "Placeholder: an N-body orbital playground from a CS module.",
     role: "TBD",
     year: "TBD",
     association: "NUS · module project (placeholder)",
@@ -245,14 +245,14 @@ export const projects: Project[] = [
     placeholder: true,
     tech: ["TypeScript", "React", "Canvas"],
     caseStudy: {
-      problem: "Placeholder problem statement — swap this with the real constraint once the module project ships.",
+      problem: "Placeholder: the problem statement for a module project.",
       built: [
-        "Placeholder bullet one — what the first week actually produced",
-        "Placeholder bullet two — the part you are proud of",
-        "Placeholder bullet three — the part that fought back",
+        "Placeholder: what the first week produced",
+        "Placeholder: what I built",
+        "Placeholder: what I learned",
       ],
-      outcome: "Placeholder outcome — one honest sentence about what it did, for whom.",
-      metrics: [{ value: "—", label: "headline metric (add when real)", placeholder: true }],
+      outcome: "Placeholder: what it did and who it was for.",
+      metrics: [{ value: "?", label: "headline metric (add when real)", placeholder: true }],
       stack: ["TypeScript", "React", "Canvas"],
       gallery: ["/placeholders/gallery-project-placeholder-1.svg", "/placeholders/gallery-project-placeholder-2.svg"],
       links: [],
@@ -275,10 +275,10 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     id: "guidesify-freelance",
-    period: "2024 — present",
+    period: "2024–present",
     role: "Freelance Web Developer",
     company: "Guidesify",
-    summary: "Builds and improves customer-facing products, ships new features with the app team, and delivers SEO-optimised WordPress sites for clients.",
+    summary: "I build and improve Guidesify\u2019s products, ship new features with the app team, and build SEO-optimised WordPress sites for clients.",
     bullets: [
       "Maintain, update, and improve Guidesify\u2019s apps and products, including the GenAI SEO Writer app",
       "Build new features and products for Guidesify together with Guidesify\u2019s app development team",
@@ -288,10 +288,10 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: "guidesify-intern",
-    period: "Mar 2024 — Jul 2024",
+    period: "Mar 2024–Jul 2024",
     role: "Web Development & Digital Marketing Intern",
     company: "Guidesify",
-    summary: "Built an AI-assisted publishing tool, a WordPress site manager, and a Singapore company search product while contributing SEO content.",
+    summary: "I built an AI-assisted publishing tool, a WordPress site manager and a company UEN search product, and wrote SEO content.",
     bullets: [
       "Developed a WordPress site manager to simplify posting articles to WordPress sites and an AI Post Writer to write SEO-optimised articles with Telegram integration",
       "Developed a company UEN Search web application using REST APIs",
@@ -301,10 +301,10 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: "saf",
-    period: "Feb 2023 — 2024",
+    period: "Feb 2023–2024",
     role: "Military Intelligence Specialist",
     company: "Singapore Armed Forces",
-    summary: "Turned operational intelligence into maps, analysis and clear plans for local and overseas exercises; also led the battalion\u2019s media work.",
+    summary: "I turned operational intelligence into maps, analysis and plans for local and overseas exercises, and led the battalion\u2019s media work.",
     bullets: [
       "Supported both local and overseas exercises by visualising intelligence gathered, analysing intelligence, as well as assisting with planning and presenting plans based on the compiled intelligence",
       "Took charge of the battalion\u2019s social media and publications, including photo and video taking, writing captions, and managing other media personnel",
@@ -314,10 +314,10 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: "ntu",
-    period: "Jan 2022 — Feb 2022",
+    period: "Jan 2022–Feb 2022",
     role: "Multilingual Transcriptionist",
     company: "Nanyang Technological University",
-    summary: "Transcribed regional-language conversations for NTU\u2019s speech-to-text project.",
+    summary: "I transcribed regional-language conversations for NTU\u2019s speech-to-text project.",
     bullets: [
       "Transcribed audio recordings of conversations into text in Bahasa Indonesia where some of the conversations included regional languages such as Javanese and Sundanese for NTU\u2019s speech-to-text project",
     ],
@@ -338,18 +338,18 @@ export const education: EducationCard[] = [
   {
     id: "nus",
     school: "National University of Singapore",
-    period: "2024 — present · Year 3",
+    period: "2024–present · Year 3",
     headline: "Bachelor of Computing in Computer Science",
     details: [
-      "RVRC Orientation Vice Project Director — onboarded 200+ freshmen",
+      "RVRC Orientation Vice Project Director, onboarded 200+ freshmen",
       "NUS Fencing Club Logistics Executive",
-      "Coursework placeholder — favourite module so far (edit me)",
+      "Coursework placeholder: favourite module so far (edit me)",
     ],
   },
   {
     id: "hci",
     school: "Hwa Chong Institution",
-    period: "2020 — 2021",
+    period: "2020–2021",
     headline: "GCE A-Levels · 85/90 rank points",
     details: [
       "Floorball goalkeeper / defender",
@@ -359,9 +359,9 @@ export const education: EducationCard[] = [
   {
     id: "bpghs",
     school: "Bukit Panjang Government High School",
-    period: "2017 — 2019",
+    period: "2017–2019",
     headline: "7 A1s · L1R5 nett 2",
-    details: ["NCC (Air) — Platoon Sergeant", "Class chairperson"],
+    details: ["NCC (Air), Platoon Sergeant", "Class chairperson"],
   },
 ];
 
@@ -423,10 +423,10 @@ export const polaroids: Polaroid[] = [
 export type NowItem = { label: string; text: string; placeholder?: boolean };
 
 export const nowItems: NowItem[] = [
-  { label: "Building", text: "Prototyping the next Guidesify experiment — details when it ships.", placeholder: true },
-  { label: "Learning", text: "Algorithms & complexity, one LeetCode grind at a time.", placeholder: true },
-  { label: "Reading", text: "Something with a cat on the cover, probably.", placeholder: true },
-  { label: "Listening", text: "Lo-fi and a purring space heater.", placeholder: true },
+  { label: "Building", text: "Placeholder: what I\u2019m building right now.", placeholder: true },
+  { label: "Learning", text: "Placeholder: what I\u2019m learning right now.", placeholder: true },
+  { label: "Reading", text: "Placeholder: what I\u2019m reading right now.", placeholder: true },
+  { label: "Listening", text: "Placeholder: what I\u2019m listening to right now.", placeholder: true },
 ];
 
 export type Faq = { question: string; answer: string; placeholder?: boolean };
@@ -440,7 +440,7 @@ export const faqs: Faq[] = [
   {
     question: "What kind of roles are you open to?",
     answer:
-      "Software and product engineering internships, plus part-time freelance web work that fits around the semester — especially front-end and full-stack product roles.",
+      "Software and product engineering internships, plus part-time freelance web work around the semester, especially front-end and full-stack roles.",
     placeholder: true,
   },
   {
@@ -450,12 +450,12 @@ export const faqs: Faq[] = [
   {
     question: "What technologies do you work with?",
     answer:
-      "Day to day: TypeScript, SvelteKit and Node/PostgreSQL at Guidesify; React and Next.js for hackathons and this site; Python and Java at NUS. I pick the tool around the product, not the other way round.",
+      "Day to day I use TypeScript, SvelteKit and Node/PostgreSQL at Guidesify; React and Next.js for hackathons and this site; and Python and Java at NUS. I try to pick the tool that fits the product.",
   },
   {
     question: "What do you enjoy most about building software?",
     answer:
-      "The problem-solving — and not just the technical kind. Working out the real workflow behind a request, and the design and UX decisions that make a tool feel obvious, is the part I enjoy most.",
+      "Working out what people really need, then making the tool feel obvious to use. That mix of problem-solving and design is the part I enjoy most.",
   },
 ];
 

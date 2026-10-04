@@ -25,9 +25,9 @@ export function Toolbox() {
         id="toolbox-head"
         num="04"
         kicker="toolbox"
-        title="What's in the toolbox."
-        accent={["toolbox."]}
-        sub="Pick a skill to see where it has actually been used."
+        title="Skills and tools"
+        accent={["tools"]}
+        sub="Pick a skill to see where I've used it."
       />
       <div className="toolbox-groups">
         {toolbox.map((group) => (
@@ -94,7 +94,7 @@ export function Toolbox() {
                 </ul>
               ) : (
                 <p className="skill-refs-empty">
-                  Nothing shipped with this yet — it lives in coursework and side quests. Ask me about it.
+                  Nothing shipped with this yet. It comes up in coursework and side projects. Ask me about it.
                 </p>
               )}
             </motion.div>
@@ -105,7 +105,7 @@ export function Toolbox() {
               initial={false}
               exit={{ opacity: 0 }}
             >
-              Pick a skill above to see the projects and roles where it actually shipped.
+              Pick a skill above to see the projects and roles where I&apos;ve used it.
             </motion.p>
           )}
         </AnimatePresence>

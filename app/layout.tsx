@@ -18,9 +18,9 @@ const serif = Instrument_Serif({
 });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
-const title = "Sean Hardjanto — Full-stack Product Engineer";
+const title = "Sean Hardjanto · Full-stack Product Engineer";
 const description =
-  "Sean Richardson Hardjanto is a full-stack product engineer and NUS Computer Science student in Singapore, shipping products at Guidesify and hunting side quests at 2am.";
+  "Sean Richardson Hardjanto is a full-stack product engineer and NUS Computer Science student in Singapore. He builds products at Guidesify.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "profile",
     url: "/",
     title,
-    description: "Full-stack product engineer & NUS CS student. Proudest ship: the GenAI SEO Writer at Guidesify.",
+    description: "Full-stack product engineer and NUS CS student. Proudest project: the GenAI SEO Writer at Guidesify.",
     siteName: "34cats",
     images: [
       {

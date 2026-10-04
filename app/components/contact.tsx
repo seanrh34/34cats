@@ -34,7 +34,7 @@ export function Contact() {
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(site.email);
-      toast({ title: "email copied — purr", detail: site.email });
+      toast({ title: "email copied", detail: site.email });
     } catch {
       toast({ title: "couldn't copy", detail: site.email });
     }
@@ -55,8 +55,8 @@ export function Contact() {
       </span>
       <Reveal className="contact-body" y={24}>
         <p className="contact-sub">
-          Internships, freelance builds, hackathon teams, or a good excuse to draw more cats —
-          my inbox is open.
+          Internships, freelance builds, hackathon teams, or a good excuse to draw more cats.
+          My inbox is open.
         </p>
         <div className="contact-actions">
           <div className="magnet-zone" onPointerMove={onMagnetMove} onPointerLeave={onMagnetLeave}>

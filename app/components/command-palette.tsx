@@ -156,7 +156,7 @@ function PaletteInner({ onClose }: { onClose: () => void }) {
       },
       {
         id: "email-copy",
-        label: `Copy email — ${site.email}`,
+        label: `Copy email (${site.email})`,
         hint: "copy",
         group: "Action",
         keywords: "mail contact",
@@ -286,7 +286,7 @@ function PaletteInner({ onClose }: { onClose: () => void }) {
         </div>
         <div className="palette-list" ref={listRef} role="listbox" aria-label="Commands">
           {filtered.length === 0 ? (
-            <p className="palette-empty">nothing matches — try “work”, “pdf” or “cat”-adjacent keywords</p>
+            <p className="palette-empty">nothing matches. Try “work”, “pdf” or “cat”-adjacent keywords</p>
           ) : (
             groups.map((group) => {
               const items = filtered.filter((c) => c.group === group);

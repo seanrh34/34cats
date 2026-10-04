@@ -48,13 +48,13 @@ export function OffClock() {
         id="offclock-head"
         num="05"
         kicker="off the clock"
-        title="A small pile of evidence."
-        accent={["evidence."]}
-        sub="Drag the polaroids around — they don't mind."
+        title="Outside of code"
+        accent={["code"]}
+        sub="Drag the photos wherever you like."
       />
       <div className="polaroid-pile-wrap">
         {isRow ? (
-          <ul className="polaroid-row" aria-label="Life off the clock — swipeable photos">
+          <ul className="polaroid-row" aria-label="Photos from outside of code">
             {polaroids.map((photo) => (
               <li key={photo.id} className="polaroid-row-item">
                 <Image
@@ -80,7 +80,7 @@ export function OffClock() {
               shuffle the pile
             </button>
             <p className="offclock-note">
-              photos are placeholders — swap them in <code>public/placeholders/</code>
+              photos are placeholders. Swap them in <code>public/placeholders/</code>
             </p>
           </div>
         ) : null}

@@ -125,7 +125,7 @@ export function CatProvider({ children }: { children: ReactNode }) {
       if (index === KONAMI.length) {
         index = 0;
         burst();
-        toast({ title: "konami accepted", detail: "A cat burst has been dispatched." });
+        toast({ title: "konami accepted", detail: "Cats incoming." });
       }
     };
     window.addEventListener("keydown", onKey);
@@ -231,7 +231,7 @@ export function HiddenCat({
       className={`hidden-cat ${isFound ? "is-found" : ""} ${className}`}
       style={style}
       data-cursor="meow"
-      aria-label={`Hidden cat — ${hint}`}
+      aria-label={`Hidden cat: ${hint}`}
       aria-pressed={isFound}
       animate={hop ? { y: [0, -14, 0], rotate: [0, -10, 4, 0] } : { y: 0, rotate: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -311,7 +311,7 @@ export function CatCounter() {
             <p className="cat-hints-title">Find the cats</p>
             {remaining.length > 0 ? (
               <>
-                <p className="cat-hints-sub">A few cats are hiding around this page. Spot them all — here is a nudge, no spoilers:</p>
+                <p className="cat-hints-sub">A few cats are hiding around this page. Here are some hints:</p>
                 <ul className="cat-hints-list">
                   {remaining.map((h) => (
                     <li key={h.id}>{h.hint}</li>

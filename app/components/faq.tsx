@@ -15,10 +15,10 @@ export function Faq() {
       <SectionHead
         id="faq-head"
         num="07"
-        kicker="faq"
-        title="Quick answers, no wait."
-        accent={["answers,"]}
-        sub="The questions people actually ask."
+        kicker="questions"
+        title="FAQ"
+        accent={["FAQ"]}
+        sub="Questions people ask me."
       />
       <div className="faq-list">
         {faqs.map((faq, index) => {

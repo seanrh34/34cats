@@ -12,9 +12,9 @@ export function Now() {
         id="now-head"
         num="06"
         kicker="now"
-        title="Right now, in bento form."
-        accent={["bento", "form."]}
-        sub="A living snapshot — placeholders until Sean fills them in."
+        title="What I'm up to"
+        accent={["up"]}
+        sub="A snapshot of what I'm doing now. Placeholders until I fill them in."
       />
       <div className="now-grid">
         {nowItems.map((item, index) => (

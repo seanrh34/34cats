@@ -53,7 +53,7 @@ export function Nav() {
     <>
       <header className="nav-shell">
         <nav className="nav-pill" aria-label="Primary navigation">
-          <Link className="nav-wordmark" href="/" aria-label="Sean Hardjanto — home">
+          <Link className="nav-wordmark" href="/" aria-label="Sean Hardjanto, home">
             <span className="nav-wordmark-num">34</span>cats
           </Link>
           <ul className="nav-links">

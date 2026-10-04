@@ -5,7 +5,7 @@ import { asset, education, experience, site, toolbox } from "../data";
 export const metadata: Metadata = {
   title: "Résumé",
   description:
-    "Résumé of Sean Richardson Hardjanto — full-stack product engineer and NUS Computer Science student in Singapore.",
+    "Résumé of Sean Richardson Hardjanto, full-stack product engineer and NUS Computer Science student in Singapore.",
   alternates: { canonical: "/resume/" },
 };
 
@@ -94,16 +94,16 @@ export default function ResumePage() {
           <div className="resume-frame">
             <object data={asset(site.resumePath)} type="application/pdf" aria-label="Résumé PDF">
               <p className="resume-fallback">
-                Your browser can&apos;t display the PDF inline —{" "}
+                Your browser can&apos;t display the PDF inline.{" "}
                 <a className="text-link" href={asset(site.resumePath)}>
-                  download Sean&apos;s résumé
+                  Download it
                 </a>{" "}
-                instead, or read the summary on the left.
+                or read the summary on the left.
               </p>
             </object>
           </div>
           <p className="resume-frame-note">
-            PDFs don&apos;t embed on most phones — the summary column covers the highlights.
+            PDFs don&apos;t embed on most phones. The summary column covers the highlights.
           </p>
         </section>
       </div>

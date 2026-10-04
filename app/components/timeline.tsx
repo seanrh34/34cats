@@ -20,8 +20,8 @@ export function Timeline() {
         id="experience-head"
         num="02"
         kicker="experience"
-        title="The story so far, on a timeline."
-        accent={["timeline."]}
+        title="Experience"
+        accent={["Experience"]}
         sub="Click an entry to unfold the details."
       />
       <div className="timeline" ref={wrapRef}>

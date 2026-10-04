@@ -84,9 +84,9 @@ export function Work() {
         id="work-head"
         num="01"
         kicker="work"
-        title="Selected work, lined up on a rail."
-        accent={["rail."]}
-        sub="Click any card for the case study — the problem, the build, the outcome."
+        title="Selected work"
+        accent={["Selected"]}
+        sub="Click any card for the case study: the problem, the build and the outcome."
       />
       {horizontal ? (
         <HorizontalTrack onOpen={openCase} />
@@ -143,7 +143,7 @@ function HorizontalTrack({ onOpen }: { onOpen: (slug: string) => void }) {
             <ProjectCard key={project.slug} project={project} index={index} onOpen={onOpen} compact />
           ))}
           <div className="work-rail-end" aria-hidden="true">
-            <span>fin —</span>
+            <span>fin</span>
           </div>
         </motion.div>
       </div>
@@ -362,7 +362,7 @@ function CaseDrawer({ project, onClose }: { project: Project | null; onClose: ()
                 </section>
               ) : null}
               <p className="case-footnote">
-                Case studies for {project.title} — reach me at{" "}
+                Case studies for {project.title}. Reach me at{" "}
                 <a className="text-link" href={`mailto:${site.email}`}>
                   {site.email}
                 </a>{" "}

@@ -14,8 +14,8 @@ export function Education() {
         id="education-head"
         num="03"
         kicker="education"
-        title="Schools & other classrooms."
-        accent={["classrooms."]}
+        title="Education"
+        accent={["Education"]}
         sub="Flip a card for the footnotes."
       />
       <div className="education-grid">

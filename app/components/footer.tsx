@@ -11,7 +11,7 @@ export function Footer() {
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(site.email);
-      toast({ title: "email copied — purr", detail: site.email });
+      toast({ title: "email copied", detail: site.email });
     } catch {
       toast({ title: "couldn't copy", detail: site.email });
     }
@@ -66,7 +66,7 @@ export function Footer() {
 
       <div className="footer-row">
         <p className="footer-copy">
-          © {new Date().getFullYear()} Sean Richardson Hardjanto · built like a night shift
+          © {new Date().getFullYear()} Sean Richardson Hardjanto · Singapore
         </p>
         <p className="footer-clock">
           SGT <Clock className="mono-time" />
