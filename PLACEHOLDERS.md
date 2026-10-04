@@ -14,7 +14,6 @@ Items marked `placeholder: true` in `app/data.ts` render a small mint "PLACEHOLD
 | `projects[*].caseStudy.metrics[placeholder]` | "—%", "—ms", "—" metric cells | Real measured numbers |
 | `education[0].details[2]` | "Coursework placeholder — favourite module so far" | A real NUS module |
 | `nowItems` (Building/Learning/Reading/Listening) | The "Now" bento cells | What is actually current |
-| `faqs[1]` | "What kind of roles are you open to?" answer | The roles actually being targeted |
 | `hero.phrases` | Cycling typewriter phrases (style choice) | Adjust copy if desired — not factual |
 
 ## Files to replace (`public/placeholders/`)
