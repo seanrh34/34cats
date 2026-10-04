@@ -1505,7 +1505,8 @@
 
 .site-footer {
   position: relative;
-  padding: 3.5rem var(--gutter) 1.6rem;
+  /* Bottom padding clears the fixed FAB stack (2 × 48px + gap + offset). */
+  padding: 3.5rem var(--gutter) calc(8rem + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--line);
   overflow: hidden;
 }
@@ -1917,6 +1918,10 @@
 
   .stats-section {
     padding-inline: max(1.25rem, var(--gutter));
+  }
+
+  .site-footer {
+    padding-bottom: calc(9rem + env(safe-area-inset-bottom, 0px));
   }
 
   .footer-contact {
