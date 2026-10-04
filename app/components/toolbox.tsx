@@ -24,7 +24,7 @@ export function Toolbox() {
       <SectionHead
         id="toolbox-head"
         num="04"
-        kicker="toolbox"
+        kicker="skills"
         title="Skills and tools"
         accent={["tools"]}
         sub="Pick a skill to see where I've used it."

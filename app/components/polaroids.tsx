@@ -47,7 +47,7 @@ export function OffClock() {
       <SectionHead
         id="offclock-head"
         num="05"
-        kicker="off the clock"
+        kicker="outside code"
         title="Outside of code"
         accent={["code"]}
         sub="Drag the photos wherever you like."
