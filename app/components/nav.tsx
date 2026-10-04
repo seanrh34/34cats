@@ -4,10 +4,10 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { navLinks, sectionAnchors, site } from "../data";
+import { asset, navLinks, sectionAnchors, site } from "../data";
 import { usePalette } from "./command-palette";
 import { CatCounter } from "./cats";
-import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "./icons";
+import { CloseIcon, DownloadIcon, MenuIcon, MoonIcon, SunIcon } from "./icons";
 import { useDialogBehavior, useTheme } from "./lib";
 
 export function Nav() {
@@ -73,6 +73,17 @@ export function Nav() {
             })}
           </ul>
           <div className="nav-actions">
+            <a
+              className="nav-icon-btn nav-resume-btn"
+              href={asset(site.resumePath)}
+              download
+              aria-label="Download résumé (PDF)"
+            >
+              <DownloadIcon width={15} height={15} />
+              <span className="nav-resume-label" aria-hidden="true">
+                Résumé
+              </span>
+            </a>
             <button
               type="button"
               className="nav-icon-btn"
@@ -137,6 +148,22 @@ export function Nav() {
                 <Link href="/resume" onClick={() => setMenuOpen(false)}>
                   <span className="mobile-link-num">[cv]</span>Résumé
                 </Link>
+              </motion.div>
+              <motion.div
+                initial={reduced ? false : { opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.06 + (sectionAnchors.length + 1) * 0.045, duration: 0.4 }}
+              >
+                <a
+                  className="mobile-link-download"
+                  href={asset(site.resumePath)}
+                  download
+                  onClick={() => setMenuOpen(false)}
+                  aria-label="Download résumé (PDF)"
+                >
+                  <span className="mobile-link-num">[pdf]</span>Download PDF
+                  <DownloadIcon width={16} height={16} className="mobile-link-icon" />
+                </a>
               </motion.div>
             </nav>
             <div className="mobile-menu-foot">
