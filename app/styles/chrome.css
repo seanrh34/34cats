@@ -462,6 +462,20 @@ html.has-cursor textarea {
   color: var(--accent-text);
 }
 
+.mobile-menu-links a.mobile-link-download {
+  gap: 0.55rem;
+  padding: 0.7rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.mobile-menu-links a.mobile-link-download:hover {
+  color: var(--accent-text);
+}
+
 .mobile-menu-foot {
   display: flex;
   flex-direction: column;

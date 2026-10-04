@@ -145,9 +145,24 @@ export function Nav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.06 + sectionAnchors.length * 0.045, duration: 0.4 }}
               >
-                <a href={asset(site.resumePath)} download onClick={() => setMenuOpen(false)} aria-label="Download résumé (PDF)">
+                <Link href="/resume" onClick={() => setMenuOpen(false)}>
                   <span className="mobile-link-num">[cv]</span>Résumé
-                  <DownloadIcon width={18} height={18} className="mobile-link-icon" />
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={reduced ? false : { opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.06 + (sectionAnchors.length + 1) * 0.045, duration: 0.4 }}
+              >
+                <a
+                  className="mobile-link-download"
+                  href={asset(site.resumePath)}
+                  download
+                  onClick={() => setMenuOpen(false)}
+                  aria-label="Download résumé (PDF)"
+                >
+                  <span className="mobile-link-num">[pdf]</span>Download PDF
+                  <DownloadIcon width={16} height={16} className="mobile-link-icon" />
                 </a>
               </motion.div>
             </nav>
