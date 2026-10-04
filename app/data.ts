@@ -1,8 +1,8 @@
-// ————————————————————————————————————————————————————————————————
+// ----------------------------------------------------------------
 // Central content model for the 34cats portfolio.
 // Every item with `placeholder: true` is invented scaffolding:
 // natural to read, easy to spot, listed in PLACEHOLDERS.md.
-// ————————————————————————————————————————————————————————————————
+// ----------------------------------------------------------------
 
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/seanhardjanto.com";
 export const siteUrl = `https://34cats.com${basePath}`;
@@ -38,7 +38,7 @@ export const hero = {
     "web apps people use",
     "tools for small teams",
     "things that ship",
-    "sites with cats in them",
+    "websites for clients",
   ],
   intro:
     "I\u2019m a Computer Science student at NUS, and I like the front-end best: it\u2019s where I get to see my work come to life. My proudest work so far is the GenAI SEO Writer, which I built at Guidesify and which is still their flagship product.",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
         "A find-the-cats easter egg, hidden across the page",
       ],
       outcome:
-        "A portfolio with the interaction, accessibility and performance I\u2019d want in any product.",
+        "A portfolio that shows more of how I like to build, and one I can keep adding to.",
       metrics: [
         { value: "0", label: "servers needed (static export only)" },
         { value: "?", label: "Lighthouse score (add after first deploy)", placeholder: true },
@@ -385,7 +385,7 @@ export type SkillRef = {
 
 const norm = (s: string) => s.toLowerCase();
 
-/** Cross-reference built from projects + experience at module load — not hard-coded. */
+/** Cross-reference built from projects + experience at module load - not hard-coded. */
 export const skillIndex: Record<string, SkillRef[]> = (() => {
   const map = new Map<string, SkillRef[]>();
   const add = (skill: string, ref: SkillRef) => {
@@ -440,26 +440,26 @@ export const faqs: Faq[] = [
   {
     question: "What kind of roles are you open to?",
     answer:
-      "Software and product engineering internships, plus part-time freelance web work around the semester, especially front-end and full-stack roles.",
-    placeholder: true,
+      "I'm most familiar with full-stack development, particularly in integrating various technologies and frameworks. However, I'm open to exploring other roles as I grow and learn.",
   },
   {
     question: "What is your availability?",
-    answer: "Part-time during semesters; full-time May to August.",
+    answer:
+      "I'm currently a full-time student, so I'm open to part-time opportunities during the semester and full-time work during the summer break (May to August).",
   },
   {
     question: "What technologies do you work with?",
     answer:
-      "Day to day I use TypeScript, SvelteKit and Node/PostgreSQL at Guidesify; React and Next.js for hackathons and this site; and Python and Java at NUS. I try to pick the tool that fits the product.",
+      "I mainly work with JavaScript and TypeScript, using frameworks like React, SvelteKit and Node.js. I'm also familiar with Python and Java, and with databases like PostgreSQL and MongoDB.",
   },
   {
     question: "What do you enjoy most about building software?",
     answer:
-      "Working out what people really need, then making the tool feel obvious to use. That mix of problem-solving and design is the part I enjoy most.",
+      "I enjoy the problem-solving side of programming the most. Not only the technical challenges, but also non-technical problems like design and user experience.",
   },
 ];
 
-/** ——— find-the-cats easter egg ——— */
+/** --- find-the-cats easter egg --- */
 export const catTotal = 9;
 
 export const catHints: { id: string; hint: string }[] = [

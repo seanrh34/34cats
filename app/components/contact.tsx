@@ -46,9 +46,9 @@ export function Contact() {
         <span className="num">[08]</span>contact
       </p>
       <SplitWords
-        text={"Let's build\nsomething."}
+        text={"Get in\ntouch."}
         className="contact-title"
-        accent={["something."]}
+        accent={["touch."]}
       />
       <span id="contact-head" className="sr-only">
         Contact

@@ -1,4 +1,4 @@
-/* ————— page sections ————— */
+/* ----- page sections ----- */
 
 /* hero */
 
@@ -1676,7 +1676,7 @@
   color: var(--accent-text);
 }
 
-/* ————— resume page ————— */
+/* ----- resume page ----- */
 
 .resume-page {
   padding: 7.5rem var(--gutter) 4rem;
@@ -1823,7 +1823,7 @@
   text-align: center;
 }
 
-/* ————— responsive sections ————— */
+/* ----- responsive sections ----- */
 
 @media (max-width: 1060px) {
   .work-rail-track .work-card {

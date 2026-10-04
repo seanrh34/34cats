@@ -1,4 +1,4 @@
-/* ————— global chrome: progress, cursor, toasts, nav, palette, cats ————— */
+/* ----- global chrome: progress, cursor, toasts, nav, palette, cats ----- */
 
 .scroll-progress {
   position: fixed;
@@ -13,7 +13,7 @@
   pointer-events: none;
 }
 
-/* ————— custom cursor ————— */
+/* ----- custom cursor ----- */
 
 html.has-cursor,
 html.has-cursor *:not(input):not(textarea):not([contenteditable]) {
@@ -137,7 +137,7 @@ html.has-cursor [contenteditable] {
   white-space: nowrap;
 }
 
-/* ————— toasts ————— */
+/* ----- toasts ----- */
 
 .toast-viewport {
   position: fixed;
@@ -181,7 +181,7 @@ html.has-cursor [contenteditable] {
   font: 400 0.76rem/1.35 var(--font-mono);
 }
 
-/* ————— floating pill nav ————— */
+/* ----- floating pill nav ----- */
 
 .nav-shell {
   position: fixed;
@@ -464,7 +464,7 @@ html.has-cursor [contenteditable] {
   display: block;
 }
 
-/* ————— floating action buttons ————— */
+/* ----- floating action buttons ----- */
 
 .fab-stack {
   position: fixed;
@@ -528,7 +528,7 @@ html.has-cursor [contenteditable] {
   opacity: 1;
 }
 
-/* ————— mobile menu ————— */
+/* ----- mobile menu ----- */
 
 .mobile-menu {
   position: fixed;
@@ -617,7 +617,7 @@ html.has-cursor [contenteditable] {
   color: var(--accent-text);
 }
 
-/* ————— command palette ————— */
+/* ----- command palette ----- */
 
 .palette-root {
   position: fixed;
@@ -754,7 +754,7 @@ html.has-cursor [contenteditable] {
   letter-spacing: 0.06em;
 }
 
-/* ————— responsive nav ————— */
+/* ----- responsive nav ----- */
 
 @media (max-width: 880px) {
   .nav-links {

@@ -2,7 +2,7 @@ import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
-/** Sitting cat silhouette — the 34cats mark. */
+/** Sitting cat silhouette - the 34cats mark. */
 export function CatSilhouette(props: IconProps) {
   return (
     <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" {...props}>
@@ -13,7 +13,7 @@ export function CatSilhouette(props: IconProps) {
   );
 }
 
-/** Cat paw — used for confetti + toast icons. */
+/** Cat paw - used for confetti + toast icons. */
 export function Paw(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
@@ -59,12 +59,12 @@ export function CloseIcon(props: IconProps) {
   );
 }
 
-/** GitHub — the cat, naturally. */
+/** GitHub - the cat, naturally. */
 export function GithubIcon(props: IconProps) {
   return <CatSilhouette {...props} />;
 }
 
-/** LinkedIn — abstract "in" plate. */
+/** LinkedIn - abstract "in" plate. */
 export function LinkedinIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true" {...props}>
@@ -75,7 +75,7 @@ export function LinkedinIcon(props: IconProps) {
   );
 }
 
-/** LeetCode — terminal prompt. */
+/** LeetCode - terminal prompt. */
 export function LeetcodeIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
@@ -85,7 +85,7 @@ export function LeetcodeIcon(props: IconProps) {
   );
 }
 
-/** Blog — open book. */
+/** Blog - open book. */
 export function BlogIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
@@ -95,7 +95,7 @@ export function BlogIcon(props: IconProps) {
   );
 }
 
-/** Apps — app grid. */
+/** Apps - app grid. */
 export function AppsIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true" {...props}>

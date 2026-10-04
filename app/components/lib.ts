@@ -30,7 +30,7 @@ export function useMediaQuery(query: string): boolean {
 const subscribeNothing = () => () => {};
 
 /**
- * False during SSR + hydration, true after — lets render branches match the
+ * False during SSR + hydration, true after - lets render branches match the
  * server output first, then adapt (e.g. to prefers-reduced-motion).
  */
 export function useIsClient(): boolean {

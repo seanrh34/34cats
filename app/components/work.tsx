@@ -85,7 +85,7 @@ export function Work() {
         num="01"
         kicker="work"
         title="Selected work"
-        accent={["Selected"]}
+        accent={["work"]}
         sub="Click any card for the case study: the problem, the build and the outcome."
       />
       {horizontal ? (

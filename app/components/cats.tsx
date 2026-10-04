@@ -145,7 +145,7 @@ export function CatProvider({ children }: { children: ReactNode }) {
   );
 }
 
-/** Deterministic per-index pseudo-random in [0, 1) — pure, SSR-stable. */
+/** Deterministic per-index pseudo-random in [0, 1) - pure, SSR-stable. */
 function seeded(i: number, salt: number): number {
   let x = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453;
   x -= Math.floor(x);

@@ -12,8 +12,8 @@ export function Now() {
         id="now-head"
         num="06"
         kicker="now"
-        title="What I'm up to"
-        accent={["up"]}
+        title="Right now"
+        accent={["now"]}
         sub="A snapshot of what I'm doing now. Placeholders until I fill them in."
       />
       <div className="now-grid">
