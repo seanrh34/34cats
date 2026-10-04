@@ -4,10 +4,10 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { navLinks, sectionAnchors, site } from "../data";
+import { asset, navLinks, sectionAnchors, site } from "../data";
 import { usePalette } from "./command-palette";
 import { CatCounter } from "./cats";
-import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "./icons";
+import { CloseIcon, DownloadIcon, MenuIcon, MoonIcon, SunIcon } from "./icons";
 import { useDialogBehavior, useTheme } from "./lib";
 
 export function Nav() {
@@ -73,6 +73,17 @@ export function Nav() {
             })}
           </ul>
           <div className="nav-actions">
+            <a
+              className="nav-icon-btn nav-resume-btn"
+              href={asset(site.resumePath)}
+              download
+              aria-label="Download résumé (PDF)"
+            >
+              <DownloadIcon width={15} height={15} />
+              <span className="nav-resume-label" aria-hidden="true">
+                Résumé
+              </span>
+            </a>
             <button
               type="button"
               className="nav-icon-btn"
@@ -134,9 +145,10 @@ export function Nav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.06 + sectionAnchors.length * 0.045, duration: 0.4 }}
               >
-                <Link href="/resume" onClick={() => setMenuOpen(false)}>
+                <a href={asset(site.resumePath)} download onClick={() => setMenuOpen(false)} aria-label="Download résumé (PDF)">
                   <span className="mobile-link-num">[cv]</span>Résumé
-                </Link>
+                  <DownloadIcon width={18} height={18} className="mobile-link-icon" />
+                </a>
               </motion.div>
             </nav>
             <div className="mobile-menu-foot">

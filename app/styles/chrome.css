@@ -239,6 +239,25 @@ html.has-cursor textarea {
   display: none;
 }
 
+.nav-resume-btn {
+  text-decoration: none;
+}
+
+.nav-resume-label {
+  letter-spacing: 0.02em;
+}
+
+.mobile-link-icon {
+  align-self: center;
+  color: var(--accent-text);
+}
+
+@media (max-width: 1024px) {
+  .nav-resume-label {
+    display: none;
+  }
+}
+
 /* cat counter + hint popover */
 
 .cat-counter-wrap {
@@ -326,6 +345,70 @@ html.has-cursor textarea {
 .cat-burst-particle {
   position: absolute;
   display: block;
+}
+
+/* ————— floating action buttons ————— */
+
+.fab-stack {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 115;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+  pointer-events: none;
+}
+
+.fab {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--bg) 90%, transparent);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  color: var(--ink);
+  pointer-events: auto;
+  transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.fab:hover,
+.fab:focus-visible {
+  color: var(--accent-text);
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+}
+
+.fab-tooltip {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 0.65rem);
+  translate: 0 -50%;
+  padding: 0.32rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--ink);
+  font: 600 0.6rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.fab:hover .fab-tooltip,
+.fab:focus-visible .fab-tooltip {
+  opacity: 1;
 }
 
 /* ————— mobile menu ————— */
@@ -553,12 +636,20 @@ html.has-cursor textarea {
     display: inline-flex;
   }
 
+  .nav-resume-btn {
+    display: none;
+  }
+
   .nav-kbtn {
     display: none;
   }
 
   .nav-pill {
     gap: 0.3rem;
+  }
+
+  .fab-tooltip {
+    display: none;
   }
 }
 
@@ -568,7 +659,9 @@ html.has-cursor textarea {
   .cursor-dot,
   .cursor-ring,
   .cat-hints,
-  .nav-pill {
+  .nav-pill,
+  .fab,
+  .fab-tooltip {
     transition-duration: 0.01ms;
   }
 }
