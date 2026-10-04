@@ -50,6 +50,10 @@ html.has-cursor [contenteditable] {
   position: absolute;
   top: 0;
   left: 0;
+  width: 26px;
+  height: 26px;
+  max-width: none;
+  flex: none;
   overflow: visible;
   filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.3));
 }
@@ -390,7 +394,7 @@ html.has-cursor [contenteditable] {
   padding: 0.95rem 1.05rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  background: var(--glass);
+  background: color-mix(in srgb, var(--bg-raised, var(--card)) 96%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow);
