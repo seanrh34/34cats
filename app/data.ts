@@ -206,7 +206,7 @@ export const projects: Project[] = [
     slug: "34cats",
     title: "34cats.com — this site",
     pitch:
-      "The site you are on: a static-export Next.js portfolio with a dot-grid hero, a command palette, and nine hidden cats.",
+      "The site you are on: a static-export Next.js portfolio with a dot-grid hero, a command palette, and a find-the-cats easter egg.",
     role: "Design + build",
     year: "2026",
     association: "Personal · design + build",
@@ -220,7 +220,7 @@ export const projects: Project[] = [
         "A fully static Next.js 16 site themed like a night shift, with a warm-paper light mode",
         "Interactive chrome: command palette (⌘K), custom cursor, scroll progress, velocity-reactive marquee",
         "A dot-grid canvas hero, a scroll-linked horizontal work showcase, a draggable polaroid pile",
-        "Nine hidden cats (this card is a hint-free zone)",
+        "A find-the-cats easter egg (this card is a hint-free zone)",
       ],
       outcome:
         "A portfolio that is itself a demo of what it claims: interaction design, accessibility, and performance on a static export.",
@@ -459,7 +459,7 @@ export const faqs: Faq[] = [
   },
 ];
 
-/** ——— 34cats easter egg ——— */
+/** ——— find-the-cats easter egg ——— */
 export const catTotal = 9;
 
 export const catHints: { id: string; hint: string }[] = [

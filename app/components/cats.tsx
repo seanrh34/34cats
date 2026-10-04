@@ -42,6 +42,36 @@ function useFoundCats(): string[] {
 }
 const EMPTY: string[] = [];
 
+const PROMPT_KEY = "find-the-cats-seen-v1";
+
+/** Whether the one-time "find the cats" nudge has been dismissed. */
+const promptStore = (() => {
+  let cache: boolean | null = null;
+  let listeners: Array<() => void> = [];
+  return {
+    subscribe(onStoreChange: () => void) {
+      listeners.push(onStoreChange);
+      return () => {
+        listeners = listeners.filter((l) => l !== onStoreChange);
+      };
+    },
+    get(): boolean {
+      if (cache === null) cache = store.get<boolean>(PROMPT_KEY, false);
+      return cache;
+    },
+    dismiss() {
+      if (cache) return;
+      cache = true;
+      store.set(PROMPT_KEY, true);
+      listeners.forEach((l) => l());
+    },
+  };
+})();
+
+function usePromptSeen(): boolean {
+  return useSyncExternalStore(promptStore.subscribe, promptStore.get, () => false);
+}
+
 type CatsApi = {
   found: string[];
   total: number;
@@ -77,9 +107,9 @@ export function CatProvider({ children }: { children: ReactNode }) {
       if (next.length >= catTotal && !celebrated.current) {
         celebrated.current = true;
         setBurstKey((k) => k + 1);
-        toast({ title: "meow! you found every cat", detail: "The other 25 are napping." });
+        toast({ title: `All ${catTotal} cats found.`, detail: "Purr-fect." });
       } else {
-        toast({ title: "meow", detail: `${next.length}/${catTotal} cats found` });
+        toast({ title: "meow", detail: `cat ${next.length} of ${catTotal} found` });
       }
     },
     [toast],
@@ -220,6 +250,7 @@ export function HiddenCat({
 /** Nav counter with hint popover. */
 export function CatCounter() {
   const { found, total, hints } = useCats();
+  const seen = usePromptSeen();
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
@@ -240,37 +271,47 @@ export function CatCounter() {
   }, [open]);
 
   const remaining = hints.filter((h) => !found.includes(h.id));
+  const showNudge = !seen && found.length === 0;
 
   return (
     <div className="cat-counter-wrap" ref={wrapRef}>
       <button
         type="button"
         className="nav-icon-btn cat-counter"
+        title="Find the cats"
         aria-expanded={open}
         aria-haspopup="dialog"
-        aria-label={`Cat hunt: ${found.length} of ${total} found. Show hints`}
-        onClick={() => setOpen((o) => !o)}
+        aria-label={`Find the cats: ${found.length} of ${total} found. Show hints`}
+        onClick={() => {
+          promptStore.dismiss();
+          setOpen((o) => !o);
+        }}
       >
         <CatSilhouette width={14} height={14} />
         <span className="cat-counter-num">
           {found.length}/{total}
         </span>
       </button>
+      {showNudge ? (
+        <span className="cat-counter-nudge" aria-hidden="true">
+          find the cats
+        </span>
+      ) : null}
       <AnimatePresence>
         {open ? (
           <motion.div
             className="cat-hints"
             role="dialog"
-            aria-label="Cat hunt hints"
+            aria-label="Find the cats hints"
             initial={{ opacity: 0, y: -8, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="cat-hints-title">the 34cats hunt</p>
+            <p className="cat-hints-title">Find the cats</p>
             {remaining.length > 0 ? (
               <>
-                <p className="cat-hints-sub">{remaining.length} still hiding — a nudge, no spoilers:</p>
+                <p className="cat-hints-sub">A few cats are hiding around this page. Spot them all — here is a nudge, no spoilers:</p>
                 <ul className="cat-hints-list">
                   {remaining.map((h) => (
                     <li key={h.id}>{h.hint}</li>
@@ -278,7 +319,7 @@ export function CatCounter() {
                 </ul>
               </>
             ) : (
-              <p className="cat-hints-sub">All 9 found. The other 25 are napping.</p>
+              <p className="cat-hints-sub">All {total} cats found. Purr-fect.</p>
             )}
           </motion.div>
         ) : null}
