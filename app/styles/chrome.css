@@ -421,7 +421,7 @@ html.has-cursor textarea {
   flex-direction: column;
   justify-content: space-between;
   padding: 1.4rem 1.6rem 2rem;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: color-mix(in srgb, var(--bg) 97%, transparent);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
