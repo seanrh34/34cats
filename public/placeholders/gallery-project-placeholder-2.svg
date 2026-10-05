@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="PLACEHOLDER · project gallery 2 · 16:10 (placeholder image)">
+  <title>PLACEHOLDER · project gallery 2 · 16:10 — placeholder image</title>
+  <defs>
+    <linearGradient id="g61" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="hsl(215 55% 26%)"/>
+      <stop offset="1" stop-color="hsl(195 60% 15%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#g61)"/>
+  <circle cx="361.8" cy="522.6" r="115" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.2"/>
+  <circle cx="15.6" cy="360.9" r="67" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.2"/>
+  <circle cx="265.9" cy="387.5" r="105" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.2"/>
+  <circle cx="0.5" cy="14.3" r="1.2" fill="#0a0a0f" opacity="0.15"/>
+  <circle cx="478.8" cy="213.9" r="2.9" fill="#ffffff" opacity="0.09"/>
+  <circle cx="419.6" cy="9.8" r="1.9" fill="#ffffff" opacity="0.12"/>
+  <circle cx="661.3" cy="65.3" r="1.6" fill="#0a0a0f" opacity="0.08"/>
+  <circle cx="902.5" cy="281.8" r="1.9" fill="#ffffff" opacity="0.06"/>
+  <circle cx="448.0" cy="535.9" r="3.0" fill="#ffffff" opacity="0.13"/>
+  <circle cx="591.5" cy="85.6" r="2.3" fill="#0a0a0f" opacity="0.14"/>
+  <circle cx="360.9" cy="463.6" r="2.2" fill="#ffffff" opacity="0.10"/>
+  <circle cx="9.2" cy="537.2" r="3.0" fill="#ffffff" opacity="0.05"/>
+  <circle cx="567.3" cy="84.6" r="2.0" fill="#0a0a0f" opacity="0.08"/>
+  <circle cx="66.6" cy="561.3" r="1.2" fill="#ffffff" opacity="0.15"/>
+  <circle cx="712.9" cy="260.3" r="2.2" fill="#ffffff" opacity="0.15"/>
+  <circle cx="609.9" cy="372.7" r="2.7" fill="#0a0a0f" opacity="0.06"/>
+  <circle cx="484.1" cy="461.6" r="3.0" fill="#ffffff" opacity="0.07"/>
+  <circle cx="650.5" cy="454.2" r="2.0" fill="#ffffff" opacity="0.12"/>
+  <circle cx="176.5" cy="465.5" r="2.1" fill="#0a0a0f" opacity="0.10"/>
+  <circle cx="177.8" cy="79.5" r="1.5" fill="#ffffff" opacity="0.10"/>
+  <circle cx="781.1" cy="299.2" r="2.2" fill="#ffffff" opacity="0.09"/>
+  <circle cx="865.9" cy="445.7" r="1.7" fill="#0a0a0f" opacity="0.08"/>
+  <circle cx="383.8" cy="33.1" r="2.0" fill="#ffffff" opacity="0.15"/>
+  <circle cx="477.0" cy="388.4" r="3.1" fill="#ffffff" opacity="0.15"/>
+  <circle cx="924.6" cy="241.3" r="3.0" fill="#0a0a0f" opacity="0.08"/>
+  <circle cx="928.3" cy="121.7" r="1.5" fill="#ffffff" opacity="0.12"/>
+  <circle cx="395.5" cy="185.8" r="1.1" fill="#ffffff" opacity="0.11"/>
+  <circle cx="131.4" cy="199.3" r="1.9" fill="#0a0a0f" opacity="0.08"/>
+  <circle cx="744.5" cy="325.8" r="2.1" fill="#ffffff" opacity="0.14"/>
+  <g opacity="0.92">
+    <rect x="14" y="562" width="294.9" height="26" rx="13" fill="#0a0a0f" fill-opacity="0.55"/>
+    <text x="23" y="579" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.5" fill="#f3efe8" fill-opacity="0.85">PLACEHOLDER · project gallery 2 · 16:10</text>
+  </g>
+</svg>
