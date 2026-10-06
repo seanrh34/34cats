@@ -90,7 +90,7 @@ export type Stat = {
 export const stats: Stat[] = [
   { value: 3, label: "AI and software engineering roles", footnote: "Univers · Aumovio · Guidesify" },
   { value: 200, suffix: "+", label: "freshmen onboarded", footnote: "RVRC orientation · vice project director" },
-  { value: 3, label: "languages spoken", footnote: "English · Bahasa Indonesia · Mandarin", placeholder: true },
+  { value: 3, label: "languages spoken", footnote: "English · Bahasa Indonesia · Mandarin" },
   { value: 85, suffix: "/90", label: "A-Level rank points", footnote: "Hwa Chong Institution · 2021" },
 ];
 
@@ -304,7 +304,7 @@ export const education: EducationCard[] = [
     id: "nus",
     school: "National University of Singapore",
     period: "2024–present · Year 3",
-    headline: "Bachelor of Computing in Computer Science",
+    headline: "Bachelor of Computing in Computer Science · GPA 4.5/5.0",
     details: [
       "RVRC Orientation Vice Project Director, onboarded 200+ freshmen",
       "NUS Fencing Club Logistics Executive",
