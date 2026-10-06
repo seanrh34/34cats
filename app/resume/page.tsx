@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { asset, education, experience, site, toolbox } from "../data";
+import { asset, education, experience, site, siteUrl, toolbox } from "../data";
 
 export const metadata: Metadata = {
   title: "Résumé",
   description:
     "Résumé of Sean Richardson Hardjanto, AI & software engineer and NUS Computer Science student in Singapore.",
-  alternates: { canonical: "/resume/" },
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/resume" },
 };
 
 export default function ResumePage() {

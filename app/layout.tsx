@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sean Richardson Hardjanto", url: siteUrl }],
   creator: "Sean Richardson Hardjanto",
-  alternates: { canonical: "/" },
+  alternates: { canonical: `${siteUrl}/` },
   openGraph: {
     type: "profile",
     url: "/",
