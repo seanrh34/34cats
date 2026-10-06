@@ -1,5 +1,0 @@
-Hi, I'm Sean, a sophomore student at the National University of Singapore (NUS) pursuing a bachelor's degree in Computer Science. My interests are in Front End Engineering as I earn a great sense of satisfaction when I see the results of my work come to life.
-
-My proudest work so far is from my past internship at *Guidesify*, an IT solutions company, where I designed and built a web application, called the **GenAI SEO writer**. This is an app that supports businesses by boosting their website's Search Engine Optimisation (SEO) ranking. Until now, the GenAI SEO writer remains as one of Guidesify's flagship products used by businesses to elevate their online presence.
-
-While my strengths lie in front end engineering, I believe that understanding the full stack of any software is important. Thus, I am always learning things even beyond the front end to deepen my knowledge to improve my skills as an engineer.
