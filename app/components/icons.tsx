@@ -75,16 +75,6 @@ export function LinkedinIcon(props: IconProps) {
   );
 }
 
-/** LeetCode - terminal prompt. */
-export function LeetcodeIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
-      <rect x="3" y="4" width="18" height="16" rx="4" />
-      <path d="m8.5 9.5-2 2.5 2 2.5M15.5 9.5l-2 2.5 2 2.5" />
-    </svg>
-  );
-}
-
 /** Blog - open book. */
 export function BlogIcon(props: IconProps) {
   return (
@@ -164,8 +154,6 @@ export function socialIcon(label: string) {
       return GithubIcon;
     case "LinkedIn":
       return LinkedinIcon;
-    case "LeetCode":
-      return LeetcodeIcon;
     case "Blog":
       return BlogIcon;
     case "Apps":

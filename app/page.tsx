@@ -30,7 +30,6 @@ export default function Home() {
         sameAs: [
           "https://github.com/seanrh34",
           "https://www.linkedin.com/in/sean-hardjanto-0b8874139/",
-          "https://leetcode.com/seanrh34",
           "https://blog.34cats.com",
         ],
         knowsAbout: [

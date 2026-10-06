@@ -13,16 +13,15 @@ import { SectionHead } from "./section-head";
 type Placement = { x: number; y: number; rotate: number };
 
 const INITIAL: Placement[] = [
-  { x: -190, y: -26, rotate: -6 },
-  { x: -44, y: 8, rotate: 3 },
-  { x: 104, y: -52, rotate: -2 },
-  { x: 22, y: 88, rotate: 7 },
+  { x: -184, y: -22, rotate: -6 },
+  { x: 4, y: 30, rotate: 3 },
+  { x: 188, y: -26, rotate: -3 },
 ];
 
 const randomPlacement = (): Placement => ({
-  x: (Math.random() - 0.5) * 430,
-  y: (Math.random() - 0.5) * 190,
-  rotate: Math.random() * 14 - 7,
+  x: (Math.random() - 0.5) * 380,
+  y: (Math.random() - 0.5) * 120,
+  rotate: Math.random() * 12 - 6,
 });
 
 export function OffClock() {
