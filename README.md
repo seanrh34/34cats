@@ -12,7 +12,7 @@ pnpm lint
 pnpm build
 ```
 
-The static export is written to `out/`.
+The static export is written to `out/`. Videos under `/videos/*` are served by the Pages Function in `functions/videos/[[path]].ts`, which adds HTTP byte-range (`206 Partial Content`) support so Cloudflare Pages can stream MP4s to Safari/iOS.
 
 ## Production URL
 
