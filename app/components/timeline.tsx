@@ -87,7 +87,8 @@ function TimelineItem({ entry, index }: { entry: (typeof experience)[number]; in
             <Image
               className="timeline-thumb"
               src={asset(entry.image.src)}
-              alt={entry.image.alt}
+              alt=""
+              aria-hidden="true"
               width={52}
               height={52}
             />

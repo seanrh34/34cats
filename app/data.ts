@@ -236,7 +236,7 @@ export const experience: ExperienceEntry[] = [
     role: "AI Forward Deployed Engineer",
     company: "Univers",
     summary:
-      "I work with client teams to find where an ontology layer or an AI platform would save them real time, then prototype the fix quickly.",
+      "I work with client teams to find where an ontology layer or an AI platform would save them time, then prototype the fix quickly.",
     bullets: [
       "Analyzed existing client workflows and proposed solutions around building ontology layers and AI Platforms to improve business efficiency in collaboration with the AI lab heads and GTM team.",
       "Performed rapid prototyping for proposed solutions to validate feasibility and business impact.",

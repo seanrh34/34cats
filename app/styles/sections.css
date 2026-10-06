@@ -2011,6 +2011,43 @@
   }
 }
 
+@media (max-width: 720px) {
+  .timeline-toggle {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "period period period"
+      "thumb role chevron";
+    align-items: center;
+    gap: 0.4rem 0.75rem;
+  }
+
+  .timeline-period {
+    grid-area: period;
+    width: auto;
+  }
+
+  .timeline-thumb {
+    grid-area: thumb;
+    width: 44px;
+    height: 44px;
+  }
+
+  .timeline-thumb-text {
+    width: 44px;
+    height: 44px;
+  }
+
+  .timeline-role {
+    grid-area: role;
+    min-width: 0;
+  }
+
+  .timeline-chevron {
+    grid-area: chevron;
+  }
+}
+
 @media (max-width: 620px) {
   .hero {
     padding-top: 6.2rem;
