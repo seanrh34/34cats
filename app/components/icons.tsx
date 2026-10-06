@@ -132,6 +132,32 @@ export function DownloadIcon(props: IconProps) {
   );
 }
 
+export function PlayIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M8 5.5v13l11-6.5-11-6.5Z" />
+    </svg>
+  );
+}
+
+export function SoundOnIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M4 9.5h3l4-3.5v12l-4-3.5H4v-5Z" fill="currentColor" stroke="none" />
+      <path d="M15 9.2a4 4 0 0 1 0 5.6M17.4 6.8a7.4 7.4 0 0 1 0 10.4" />
+    </svg>
+  );
+}
+
+export function SoundOffIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M4 9.5h3l4-3.5v12l-4-3.5H4v-5Z" fill="currentColor" stroke="none" />
+      <path d="m15.5 9.5 5 5M20.5 9.5l-5 5" />
+    </svg>
+  );
+}
+
 export function socialIcon(label: string) {
   switch (label) {
     case "GitHub":

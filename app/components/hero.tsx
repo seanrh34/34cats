@@ -22,7 +22,6 @@ export function Hero() {
           <p className="status-chip">
             <span className="status-pulse" aria-hidden="true" />
             {status.text}
-            {status.placeholder ? <span className="placeholder-flag">placeholder</span> : null}
           </p>
           <h1 className="hero-name" aria-label={hero.name}>
             {hero.name.split("").map((char, i) =>
@@ -184,10 +183,10 @@ function TiltPortrait() {
       >
         <motion.div className="hero-portrait-card" style={{ transform }}>
           <Image
-            src={asset("/images/sean_photo_resized.jpg")}
-            alt="Sean Richardson Hardjanto"
-            width={720}
-            height={900}
+            src={asset("/images/sean-main.jpg")}
+            alt="Sean Hardjanto smiling at a graduation dinner"
+            width={1050}
+            height={1400}
             priority
             sizes="(max-width: 860px) 72vw, 360px"
           />
@@ -196,7 +195,7 @@ function TiltPortrait() {
         </motion.div>
       </div>
       <p className="hero-portrait-caption">
-        Currently: Guidesify · Singapore (SGT <Clock className="mono-time" />)
+        Currently: Univers · Singapore (SGT <Clock className="mono-time" />)
       </p>
     </div>
   );

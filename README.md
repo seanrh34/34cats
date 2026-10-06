@@ -1,6 +1,6 @@
 # Sean Hardjanto — Portfolio (34cats)
 
-Portfolio for Sean Richardson Hardjanto — full-stack product engineer & NUS CS student —
+Portfolio for Sean Richardson Hardjanto, AI & software engineer and NUS CS student,
 built with Next.js (App Router, static export) and plain CSS.
 
 ## Commands (pnpm only)

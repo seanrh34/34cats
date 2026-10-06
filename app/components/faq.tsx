@@ -14,7 +14,7 @@ export function Faq() {
     <section className="section faq-section" id="faq" aria-labelledby="faq-head">
       <SectionHead
         id="faq-head"
-        num="07"
+        num="06"
         kicker="questions"
         title="FAQ"
         accent={["FAQ"]}

@@ -13,7 +13,7 @@ export const asset = (path: string) => `${basePath}${path}`;
 export const site = {
   name: "Sean Richardson Hardjanto",
   shortName: "Sean Hardjanto",
-  tagline: "full-stack product engineer & NUS CS student",
+  tagline: "AI & software engineer & NUS CS student",
   email: "seanhardjanto034@gmail.com",
   location: "Singapore",
   timezone: "Asia/Singapore",
@@ -28,8 +28,7 @@ export const site = {
 } as const;
 
 export const status = {
-  text: "Open to Summer 2027 internships",
-  placeholder: true,
+  text: "Open to internships: Summer 2027 & Aug–Nov 2027",
 } as const;
 
 export const hero = {
@@ -51,8 +50,7 @@ export const sectionAnchors = [
   { id: "education", label: "Education", num: "03" },
   { id: "toolbox", label: "Skills", num: "04" },
   { id: "offclock", label: "Outside code", num: "05" },
-  { id: "now", label: "Now", num: "06" },
-  { id: "faq", label: "FAQ", num: "07" },
+  { id: "faq", label: "FAQ", num: "06" },
   { id: "contact", label: "Contact", num: null },
 ] as const;
 
@@ -63,8 +61,21 @@ export const navLinks = sectionAnchors.filter((s) =>
 
 export const marquee = {
   rows: [
-    ["TypeScript", "React", "Next.js", "Svelte 5", "SvelteKit", "Node.js", "PostgreSQL", "Python"],
-    ["Java", "WordPress", "Tailwind CSS", "REST APIs", "Computer Vision", "SEO", "ArcGIS", "DaVinci Resolve"],
+    ["TypeScript", "React", "Next.js", "Svelte", "SvelteKit", "Node.js", "PostgreSQL", "Python"],
+    [
+      "Agentic AI",
+      "LLMs",
+      "MCP",
+      "UiPath RPA",
+      "Tailwind CSS",
+      "REST APIs",
+      "Computer Vision",
+      "Prompt engineering",
+      "SEO",
+      "GIS",
+      "Java",
+      "WordPress",
+    ],
   ],
 } as const;
 
@@ -77,7 +88,7 @@ export type Stat = {
 };
 
 export const stats: Stat[] = [
-  { value: 2, suffix: "+", label: "yrs shipping at Guidesify", footnote: "Intern, then freelance. Still at it." },
+  { value: 3, label: "AI and software engineering roles", footnote: "Univers · Aumovio · Guidesify" },
   { value: 200, suffix: "+", label: "freshmen onboarded", footnote: "RVRC orientation · vice project director" },
   { value: 3, label: "languages spoken", footnote: "English · Bahasa Indonesia · Mandarin", placeholder: true },
   { value: 85, suffix: "/90", label: "A-Level rank points", footnote: "Hwa Chong Institution · 2021" },
@@ -122,7 +133,7 @@ export const projects: Project[] = [
     association: "Guidesify · flagship product",
     image: "/images/projects/genai-seo-writer.png",
     url: "https://app.guidesify.com/genai-seo-writer",
-    tech: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "WordPress", "Telegram", "REST APIs"],
+    tech: ["Svelte", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "WordPress", "Telegram", "REST APIs"],
     caseStudy: {
       problem:
         "At Guidesify, research, drafting, SEO checks and publishing all happened in different tools, so one article could take an afternoon of copy-paste.",
@@ -138,7 +149,7 @@ export const projects: Project[] = [
         { value: "1", label: "product for the whole content workflow" },
         { value: "?", label: "faster article turnaround (add real figure)", placeholder: true },
       ],
-      stack: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "WordPress", "Telegram", "REST APIs"],
+      stack: ["Svelte", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "WordPress", "Telegram", "REST APIs"],
       gallery: ["/placeholders/gallery-genai-seo-writer-1.svg", "/placeholders/gallery-genai-seo-writer-2.svg"],
       links: [{ label: "View live product", href: "https://app.guidesify.com/genai-seo-writer" }],
     },
@@ -152,7 +163,7 @@ export const projects: Project[] = [
     association: "Guidesify · internship",
     image: "/images/projects/uen-search.png",
     url: "https://app.guidesify.com/uen-search",
-    tech: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs"],
+    tech: ["Svelte", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs"],
     caseStudy: {
       problem:
         "Singapore\u2019s public business registry is thorough but awkward to use. Finding a company by name or UEN meant working through a form.",
@@ -166,7 +177,7 @@ export const projects: Project[] = [
         { value: "1", label: "search box for business records" },
         { value: "?", label: "median keystroke-to-result (add real figure)", placeholder: true },
       ],
-      stack: ["Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs"],
+      stack: ["Svelte", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs"],
       gallery: ["/placeholders/gallery-uen-search-1.svg", "/placeholders/gallery-uen-search-2.svg"],
       links: [{ label: "Try the search", href: "https://app.guidesify.com/uen-search" }],
     },
@@ -202,62 +213,6 @@ export const projects: Project[] = [
       ],
     },
   },
-  {
-    slug: "34cats",
-    title: "34cats.com · this site",
-    pitch:
-      "The site you\u2019re on. A static-export Next.js portfolio with a dot-grid hero, a command palette and a find-the-cats easter egg.",
-    role: "Design + build",
-    year: "2026",
-    association: "Personal · design + build",
-    image: "/placeholders/project-34cats.svg",
-    video: "/videos/placeholder-demo.webm",
-    url: "https://34cats.com",
-    tech: ["TypeScript", "React", "Next.js", "CSS", "Motion"],
-    caseStudy: {
-      problem: "My old portfolio was a single static page. It was accurate, but it didn\u2019t show how I like to build.",
-      built: [
-        "A fully static Next.js 16 site themed like a night shift, with a warm-paper light mode",
-        "Interactive chrome: command palette (⌘K), custom cursor, scroll progress, velocity-reactive marquee",
-        "A dot-grid canvas hero, a horizontal work showcase that follows scroll, a draggable polaroid pile",
-        "A find-the-cats easter egg, hidden across the page",
-      ],
-      outcome:
-        "A portfolio that shows more of how I like to build, and one I can keep adding to.",
-      metrics: [
-        { value: "0", label: "servers needed (static export only)" },
-        { value: "?", label: "Lighthouse score (add after first deploy)", placeholder: true },
-      ],
-      stack: ["Next.js", "React", "TypeScript", "CSS", "Motion", "Canvas 2D"],
-      gallery: ["/placeholders/gallery-34cats-1.svg", "/placeholders/gallery-34cats-2.svg"],
-      links: [{ label: "Open the live site", href: "https://34cats.com" }],
-    },
-  },
-  {
-    slug: "project-placeholder",
-    title: "Project Placeholder",
-    pitch: "Placeholder: an N-body orbital playground from a CS module.",
-    role: "TBD",
-    year: "TBD",
-    association: "NUS · module project (placeholder)",
-    image: "/placeholders/project-placeholder.svg",
-    video: "/videos/placeholder-demo.webm",
-    placeholder: true,
-    tech: ["TypeScript", "React", "Canvas"],
-    caseStudy: {
-      problem: "Placeholder: the problem statement for a module project.",
-      built: [
-        "Placeholder: what the first week produced",
-        "Placeholder: what I built",
-        "Placeholder: what I learned",
-      ],
-      outcome: "Placeholder: what it did and who it was for.",
-      metrics: [{ value: "?", label: "headline metric (add when real)", placeholder: true }],
-      stack: ["TypeScript", "React", "Canvas"],
-      gallery: ["/placeholders/gallery-project-placeholder-1.svg", "/placeholders/gallery-project-placeholder-2.svg"],
-      links: [],
-    },
-  },
 ];
 
 export type ExperienceEntry = {
@@ -268,61 +223,71 @@ export type ExperienceEntry = {
   summary: string;
   bullets: string[];
   tags: string[];
+  /** Optional card photo; entries without one show a mono initial tile. */
+  image?: { src: string; alt: string };
   /** Broad capability areas used by the toolbox cross-reference. */
   domains?: string[];
 };
 
 export const experience: ExperienceEntry[] = [
   {
-    id: "guidesify-freelance",
-    period: "2024–present",
-    role: "Freelance Web Developer",
-    company: "Guidesify",
-    summary: "I build and improve Guidesify\u2019s products, ship new features with the app team, and build SEO-optimised WordPress sites for clients.",
+    id: "univers",
+    period: "Aug 2026–present",
+    role: "AI Forward Deployed Engineer",
+    company: "Univers",
+    summary:
+      "I work with client teams to find where an ontology layer or an AI platform would save them time, then prototype the fix quickly.",
     bullets: [
-      "Maintain, update, and improve Guidesify\u2019s apps and products, including the GenAI SEO Writer app",
-      "Build new features and products for Guidesify together with Guidesify\u2019s app development team",
-      "Build SEO-optimised WordPress sites for Guidesify\u2019s clients",
+      "Analyzed existing client workflows and proposed solutions around building ontology layers and AI Platforms to improve business efficiency in collaboration with the AI lab heads and GTM team.",
+      "Performed rapid prototyping for proposed solutions to validate feasibility and business impact.",
+      "Conducted research on self-improvement and recursive self-improvement (RSI) agents and implemented SI and RSI loops, integrating them into both in-house and client solution workflows.",
     ],
-    tags: ["JavaScript", "TypeScript", "Svelte 5", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs", "WordPress", "SEO"],
+    tags: ["Agentic AI", "LLMs", "Python", "Rapid prototyping", "Client workflow analysis"],
   },
   {
-    id: "guidesify-intern",
-    period: "Mar 2024–Jul 2024",
-    role: "Web Development & Digital Marketing Intern",
-    company: "Guidesify",
-    summary: "I built an AI-assisted publishing tool, a WordPress site manager and a company UEN search product, and wrote SEO content.",
+    id: "aumovio",
+    period: "May 2026–Jul 2026",
+    role: "AI & Automation Engineer",
+    company: "Aumovio Singapore",
+    summary:
+      "I built UiPath RPA automations that pair LLMs and OCR with Python scripts to read documents accurately at a low cost.",
+    image: { src: "/images/experience/experience-aumovio.jpg", alt: "Sean with fellow interns at Aumovio Singapore" },
     bullets: [
-      "Developed a WordPress site manager to simplify posting articles to WordPress sites and an AI Post Writer to write SEO-optimised articles with Telegram integration",
-      "Developed a company UEN Search web application using REST APIs",
-      "Wrote SEO-optimised articles on various topics for the company, including both local and international topics",
+      "Developed UiPath Robotic Process Automation (RPA) applications to automate processes leveraging LLMs, OCR, and self-written Python scripts for both attended and unattended robot processes.",
+      "Engineered prompts, guardrails, and workflows for LLMs to accurately extract information and to present them in a consistent manner from PDF files of varying templates to a near 100% accuracy while minimizing costs.",
+      "Worked with product managers and senior engineers to make improvements to the applications according to client feedback, both technical and non-technical, following Agile principles.",
     ],
-    tags: ["JavaScript", "TypeScript", "Svelte 4", "SvelteKit", "Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs", "SEO"],
+    tags: ["UiPath RPA", "LLMs", "Prompt engineering", "OCR", "Python", "Agile"],
+  },
+  {
+    id: "guidesify",
+    period: "Aug 2024–May 2026",
+    role: "AI & Software Engineer",
+    company: "Guidesify Pte. Ltd",
+    summary:
+      "I built and shipped Guidesify's GenAI products, including the SEO Writer and a UEN search app that lifted their digital impressions fast.",
+    image: { src: "/images/experience/experience-guidesify.jpg", alt: "Sean with the Guidesify team" },
+    bullets: [
+      "Developed and deployed updates to the GenAI SEO Writer App to implement agentic AI capabilities including tools, sub-agents, orchestrator agents, and MCP servers for advanced reasoning and writing capabilities.",
+      "Engineered, developed, and deployed a GenAI-powered B2B app using REST APIs to boost client brands' SEO ratings and digital presence, generating sustained sales revenue for Guidesify as one of their flagship products.",
+      "Developed and deployed a Singapore company UEN Search web application with REST APIs using Svelte and SvelteKit, providing data on over 500,000 companies with minimal database storage usage. The app went on to increase the company's digital impressions by over 200% within 48 hours.",
+    ],
+    tags: ["Agentic AI", "MCP", "LLMs", "TypeScript", "Svelte", "SvelteKit", "Node.js", "PostgreSQL", "REST APIs", "SEO"],
   },
   {
     id: "saf",
     period: "Feb 2023–2024",
-    role: "Military Intelligence Specialist",
+    role: "Military Intelligence Expert",
     company: "Singapore Armed Forces",
-    summary: "I turned operational intelligence into maps, analysis and plans for local and overseas exercises, and led the battalion\u2019s media work.",
+    summary:
+      "I turned intelligence into maps, analysis and plans for local and overseas exercises, including next generation UAV trials.",
+    image: { src: "/images/experience/experience-ns.jpg", alt: "Sean in Singapore Armed Forces ceremonial uniform" },
     bullets: [
-      "Supported both local and overseas exercises by visualising intelligence gathered, analysing intelligence, as well as assisting with planning and presenting plans based on the compiled intelligence",
-      "Took charge of the battalion\u2019s social media and publications, including photo and video taking, writing captions, and managing other media personnel",
+      "Tactical map planning and analysis with Geographical Information Systems (GIS)",
+      "Unmanned Aerial Vehicle (UAV) intelligence analysis",
+      "Assisted with next generation tactical UAV trials in local and overseas exercises",
     ],
-    tags: ["ArcGIS", "Microsoft Excel", "Microsoft PowerPoint", "DaVinci Resolve"],
-    domains: ["Intelligence analysis", "Media production"],
-  },
-  {
-    id: "ntu",
-    period: "Jan 2022–Feb 2022",
-    role: "Multilingual Transcriptionist",
-    company: "Nanyang Technological University",
-    summary: "I transcribed regional-language conversations for NTU\u2019s speech-to-text project.",
-    bullets: [
-      "Transcribed audio recordings of conversations into text in Bahasa Indonesia where some of the conversations included regional languages such as Javanese and Sundanese for NTU\u2019s speech-to-text project",
-    ],
-    tags: ["Bahasa Indonesia", "Javanese", "Sundanese", "Transcription"],
-    domains: ["Transcription"],
+    tags: ["GIS", "UAV intelligence", "Intelligence analysis"],
   },
 ];
 
@@ -368,11 +333,18 @@ export const education: EducationCard[] = [
 export type SkillGroup = { group: string; skills: string[] };
 
 export const toolbox: SkillGroup[] = [
-  { group: "Languages", skills: ["TypeScript", "JavaScript", "Python", "Java", "SQL"] },
-  { group: "Frontend", skills: ["React", "Next.js", "Svelte 5", "SvelteKit", "Tailwind CSS", "CSS"] },
+  { group: "Languages", skills: ["TypeScript", "JavaScript", "Python", "Java", "HTML/CSS"] },
+  {
+    group: "AI & automation",
+    skills: ["Agentic AI", "LLMs", "MCP", "Prompt engineering", "UiPath RPA", "OCR", "Computer Vision"],
+  },
+  { group: "Frontend", skills: ["React", "Next.js", "Svelte", "SvelteKit", "Tailwind CSS"] },
   { group: "Backend & data", skills: ["Node.js", "PostgreSQL", "REST APIs", "WordPress"] },
-  { group: "Tools", skills: ["Git & GitHub", "SEO", "ArcGIS", "DaVinci Resolve", "Microsoft Excel"] },
-  { group: "Non-code", skills: ["Media production", "Intelligence analysis", "Transcription", "Bahasa Indonesia", "Javanese", "Sundanese"] },
+  { group: "Practices & tools", skills: ["Git", "Rapid prototyping", "Agile", "SEO", "GIS"] },
+  {
+    group: "Beyond code",
+    skills: ["Client workflow analysis", "Intelligence analysis", "UAV intelligence", "Bahasa Indonesia"],
+  },
 ];
 
 export type SkillRef = {
@@ -412,21 +384,10 @@ export const lookUpSkill = (skill: string) => skillIndex[norm(skill)] ?? [];
 export type Polaroid = { id: string; caption: string; image: string };
 
 export const polaroids: Polaroid[] = [
-  { id: "fencing", caption: "Fencing at NUS", image: "/placeholders/photo-fencing.svg" },
-  { id: "floorball", caption: "Floorball keeper days", image: "/placeholders/photo-floorball.svg" },
-  { id: "rvrc", caption: "RVRC orientation", image: "/placeholders/photo-rvrc.svg" },
-  { id: "battalion", caption: "Battalion media shoot", image: "/placeholders/photo-battalion.svg" },
-  { id: "hacknroll", caption: "Hack&Roll 2025 all-nighter", image: "/placeholders/photo-hacknroll.svg" },
-  { id: "cats", caption: "The 34 cats (allegedly)", image: "/placeholders/photo-cats.svg" },
-];
-
-export type NowItem = { label: string; text: string; placeholder?: boolean };
-
-export const nowItems: NowItem[] = [
-  { label: "Building", text: "Placeholder: what I\u2019m building right now.", placeholder: true },
-  { label: "Learning", text: "Placeholder: what I\u2019m learning right now.", placeholder: true },
-  { label: "Reading", text: "Placeholder: what I\u2019m reading right now.", placeholder: true },
-  { label: "Listening", text: "Placeholder: what I\u2019m listening to right now.", placeholder: true },
+  { id: "fencing-1", caption: "Fencing at NUS", image: "/images/life/life-fencing-1.jpg" },
+  { id: "fencing-2", caption: "On the piste with NUS Fencing", image: "/images/life/life-fencing-2.jpg" },
+  { id: "rv-floorball", caption: "RVRC floorball", image: "/images/life/life-rv-floorball.jpg" },
+  { id: "rvfop", caption: "RVRC Freshmen Orientation", image: "/images/life/life-rvfop.jpg" },
 ];
 
 export type Faq = { question: string; answer: string; placeholder?: boolean };
@@ -440,22 +401,17 @@ export const faqs: Faq[] = [
   {
     question: "What kind of roles are you open to?",
     answer:
-      "I'm most familiar with full-stack development, particularly in integrating various technologies and frameworks. However, I'm open to exploring other roles as I grow and learn.",
+      "I specialise in agentic AI and software engineering, so I'm most interested in Software/AI Engineer roles, but I'm open to other tech roles including, but not limited to, Forward Deployed Engineer and Product/Project Management roles.",
   },
   {
     question: "What is your availability?",
     answer:
-      "I'm currently a full-time student, so I'm open to part-time opportunities during the semester and full-time work during the summer break (May to August).",
-  },
-  {
-    question: "What technologies do you work with?",
-    answer:
-      "I mainly work with JavaScript and TypeScript, using frameworks like React, SvelteKit and Node.js. I'm also familiar with Python and Java, and with databases like PostgreSQL and MongoDB.",
+      "As of October 2026, I'm open to full-time internships in summer 2027 and in Semester 1 (Aug–Nov 2027).",
   },
   {
     question: "What do you enjoy most about building software?",
     answer:
-      "I enjoy the problem-solving side of programming the most. Not only the technical challenges, but also non-technical problems like design and user experience.",
+      "I love to see the results of my work, and building good software gives me the best validation for that, whether it's through the metrics my software improves or simply users saying that they liked it.",
   },
 ];
 
