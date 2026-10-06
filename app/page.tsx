@@ -4,7 +4,6 @@ import { Education } from "./components/education";
 import { Faq } from "./components/faq";
 import { Hero } from "./components/hero";
 import { Marquee } from "./components/marquee";
-import { Now } from "./components/now";
 import { OffClock } from "./components/polaroids";
 import { Stats } from "./components/stats";
 import { Timeline } from "./components/timeline";
@@ -22,11 +21,11 @@ export default function Home() {
         name: "Sean Richardson Hardjanto",
         alternateName: "Sean Hardjanto",
         url: `${siteUrl}/`,
-        image: `${siteUrl}/images/sean_photo_resized.jpg`,
+        image: `${siteUrl}/images/sean-main.jpg`,
         email: "mailto:seanhardjanto034@gmail.com",
         nationality: { "@type": "Country", name: "Singapore" },
         homeLocation: { "@type": "Place", name: "Singapore" },
-        jobTitle: "Full-stack Product Engineer",
+        jobTitle: "AI & Software Engineer",
         alumniOf: { "@type": "CollegeOrUniversity", name: "National University of Singapore" },
         sameAs: [
           "https://github.com/seanrh34",
@@ -35,8 +34,9 @@ export default function Home() {
           "https://blog.34cats.com",
         ],
         knowsAbout: [
-          "Full-stack development",
-          "Product engineering",
+          "Agentic AI",
+          "LLM applications",
+          "Software engineering",
           "Next.js",
           "SvelteKit",
           "TypeScript",
@@ -81,7 +81,6 @@ export default function Home() {
         <Education />
         <Toolbox />
         <OffClock />
-        <Now />
         <Faq />
         <Contact />
       </main>

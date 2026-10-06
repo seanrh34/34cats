@@ -18,9 +18,9 @@ const serif = Instrument_Serif({
 });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
 
-const title = "Sean Hardjanto · Full-stack Product Engineer";
+const title = "Sean Hardjanto · AI & Software Engineer";
 const description =
-  "Sean Richardson Hardjanto is a full-stack product engineer and NUS Computer Science student in Singapore. He builds products at Guidesify.";
+  "Sean Richardson Hardjanto is an AI & software engineer and NUS Computer Science student in Singapore. He builds products at Guidesify.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     "Sean Hardjanto",
     "Sean Richardson Hardjanto",
     "34cats",
-    "full stack developer Singapore",
-    "product engineer Singapore",
+    "AI engineer Singapore",
+    "software engineer Singapore",
     "NUS computer science",
     "Guidesify",
   ],
@@ -45,22 +45,22 @@ export const metadata: Metadata = {
     type: "profile",
     url: "/",
     title,
-    description: "Full-stack product engineer and NUS CS student. Proudest project: the GenAI SEO Writer at Guidesify.",
+    description: "AI & software engineer and NUS CS student. Proudest project: the GenAI SEO Writer at Guidesify.",
     siteName: "34cats",
     images: [
       {
-        url: asset("/images/sean_photo_resized.jpg"),
-        width: 1200,
-        height: 1200,
-        alt: "Sean Richardson Hardjanto",
+        url: asset("/images/sean-main.jpg"),
+        width: 1050,
+        height: 1400,
+        alt: "Sean Hardjanto smiling at a graduation dinner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title,
-    description: "Full-stack product engineer & NUS CS student in Singapore.",
-    images: [asset("/images/sean_photo_resized.jpg")],
+    description: "AI & software engineer & NUS CS student in Singapore.",
+    images: [asset("/images/sean-main.jpg")],
   },
   robots: { index: true, follow: true },
   icons: { icon: asset("/34cats_svg.svg") },

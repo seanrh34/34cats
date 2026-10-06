@@ -5,7 +5,7 @@ import { asset, education, experience, site, toolbox } from "../data";
 export const metadata: Metadata = {
   title: "Résumé",
   description:
-    "Résumé of Sean Richardson Hardjanto, full-stack product engineer and NUS Computer Science student in Singapore.",
+    "Résumé of Sean Richardson Hardjanto, AI & software engineer and NUS Computer Science student in Singapore.",
   alternates: { canonical: "/resume/" },
 };
 

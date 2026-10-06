@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Sean Hardjanto · 34cats",
     short_name: "34cats",
-    description: "Portfolio of Sean Richardson Hardjanto, full-stack product engineer and NUS CS student in Singapore.",
+    description: "Portfolio of Sean Richardson Hardjanto, AI & software engineer and NUS CS student in Singapore.",
     start_url: asset("/"),
     display: "standalone",
     background_color: "#0a0a0f",

@@ -1,8 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion, useInView, useScroll, useSpring } from "motion/react";
+import Image from "next/image";
 import { useRef, useState } from "react";
-import { catHints, experience } from "../data";
+import { asset, catHints, experience } from "../data";
 import { HiddenCat } from "./cats";
 import { useAnimationsEnabled } from "./lib";
 import { Reveal } from "./reveal";
@@ -45,6 +46,30 @@ function TimelineItem({ entry, index }: { entry: (typeof experience)[number]; in
   const inView = useInView(nodeRef, { margin: "0px 0px -45% 0px" });
   const animate = useAnimationsEnabled();
   const panelId = `exp-${entry.id}-panel`;
+  const initial = entry.company
+    .split(/\s+/)
+    .map((word) => word.replace(/[^A-Za-z0-9]/g, "")[0] ?? "")
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  const copy = (
+    <>
+      <p className="timeline-summary">{entry.summary}</p>
+      <ul className="timeline-bullets">
+        {entry.bullets.map((bullet) => (
+          <li key={bullet}>{bullet}</li>
+        ))}
+      </ul>
+      <ul className="tag-chips" aria-label="Tags">
+        {entry.tags.map((tag) => (
+          <li className="chip" key={tag}>
+            {tag}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 
   return (
     <li className={`timeline-item ${inView ? "is-lit" : ""}`}>
@@ -58,6 +83,19 @@ function TimelineItem({ entry, index }: { entry: (typeof experience)[number]; in
           onClick={() => setOpen((o) => !o)}
         >
           <span className="timeline-period">{entry.period}</span>
+          {entry.image ? (
+            <Image
+              className="timeline-thumb"
+              src={asset(entry.image.src)}
+              alt={entry.image.alt}
+              width={52}
+              height={52}
+            />
+          ) : (
+            <span className="timeline-thumb timeline-thumb-text" aria-hidden="true">
+              {initial}
+            </span>
+          )}
           <span className="timeline-role">
             <strong>{entry.role}</strong>
             <span className="timeline-company">{entry.company}</span>
@@ -76,19 +114,22 @@ function TimelineItem({ entry, index }: { entry: (typeof experience)[number]; in
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: animate ? 0.36 : 0, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="timeline-summary">{entry.summary}</p>
-              <ul className="timeline-bullets">
-                {entry.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
-              <ul className="tag-chips" aria-label="Tags">
-                {entry.tags.map((tag) => (
-                  <li className="chip" key={tag}>
-                    {tag}
-                  </li>
-                ))}
-              </ul>
+              {entry.image ? (
+                <div className="timeline-panel-inner has-photo">
+                  <Image
+                    className="timeline-photo"
+                    src={asset(entry.image.src)}
+                    alt={entry.image.alt}
+                    width={320}
+                    height={240}
+                    sizes="(max-width: 720px) 88vw, 320px"
+                    loading="lazy"
+                  />
+                  <div className="timeline-panel-copy">{copy}</div>
+                </div>
+              ) : (
+                copy
+              )}
             </motion.div>
           ) : null}
         </AnimatePresence>
