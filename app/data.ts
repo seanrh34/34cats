@@ -4,7 +4,7 @@
 // natural to read, easy to spot, listed in PLACEHOLDERS.md.
 // ----------------------------------------------------------------
 
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/seanhardjanto.com";
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const siteUrl = `https://34cats.com${basePath}`;
 
 /** Prefix a /public path with the env-driven basePath (next/image `unoptimized` does not). */

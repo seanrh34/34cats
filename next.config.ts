@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
-// Vercel previews serve from the domain root; the 34cats.com host serves under /seanhardjanto.com.
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (process.env.VERCEL ? "" : "/seanhardjanto.com");
+// The site is served from the domain root by default; NEXT_PUBLIC_BASE_PATH can set a sub-path.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   basePath: basePath || undefined,

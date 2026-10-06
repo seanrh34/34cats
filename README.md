@@ -1,4 +1,4 @@
-# Sean Hardjanto — Portfolio (34cats)
+# Sean Hardjanto - Portfolio (34cats)
 
 Portfolio for Sean Richardson Hardjanto, AI & software engineer and NUS CS student,
 built with Next.js (App Router, static export) and plain CSS.
@@ -14,14 +14,11 @@ pnpm build
 
 The static export is written to `out/`.
 
-## Base path
+## Production URL
 
-The site is normally served at `https://34cats.com/seanhardjanto.com/`, which is the default
-`basePath`. To build a copy that works at a domain root instead:
-
-```bash
-NEXT_PUBLIC_BASE_PATH="" pnpm build
-```
+The site is served from `https://34cats.com/`, deployed by Cloudflare Pages from the `main`
+branch (build command `pnpm build`, output directory `out`). `NEXT_PUBLIC_BASE_PATH` is
+optional: set it (e.g. `/seanhardjanto.com`) only when hosting under a sub-path.
 
 `NEXT_PUBLIC_BASE_PATH` drives both the Next.js `basePath` (in `next.config.ts`) and the
 `asset()` helper in `app/data.ts`, which prefixes every `/public` URL (images, PDF, SVG)
