@@ -1359,7 +1359,7 @@
 
 .polaroid-pile {
   position: relative;
-  height: 480px;
+  height: 560px;
   max-width: 900px;
   margin-inline: auto;
   touch-action: none;
@@ -1399,9 +1399,11 @@
 .polaroid-caption {
   padding-top: 9px;
   color: #453f35;
-  font: 500 0.62rem/1.4 var(--font-mono);
-  letter-spacing: 0.04em;
+  font: 500 0.72rem/1.5 var(--font-mono);
+  letter-spacing: 0.02em;
   text-align: center;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .polaroid-hint {
@@ -1415,6 +1417,7 @@
 
 .polaroid-row {
   display: flex;
+  align-items: stretch;
   gap: 1rem;
   margin: 0;
   padding: 0.4rem 0 0.8rem;
@@ -1441,6 +1444,7 @@
 }
 
 .polaroid-row-item img {
+  width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 3px;

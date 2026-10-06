@@ -21,7 +21,6 @@ export const site = {
   socials: [
     { label: "GitHub", href: "https://github.com/seanrh34" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/sean-hardjanto-0b8874139/" },
-    { label: "LeetCode", href: "https://leetcode.com/seanrh34" },
     { label: "Blog", href: "https://blog.34cats.com" },
     { label: "Apps", href: "https://apps.34cats.com" },
   ],
@@ -384,10 +383,21 @@ export const lookUpSkill = (skill: string) => skillIndex[norm(skill)] ?? [];
 export type Polaroid = { id: string; caption: string; image: string };
 
 export const polaroids: Polaroid[] = [
-  { id: "fencing-1", caption: "Fencing at NUS", image: "/images/life/life-fencing-1.jpg" },
-  { id: "fencing-2", caption: "On the piste with NUS Fencing", image: "/images/life/life-fencing-2.jpg" },
-  { id: "rv-floorball", caption: "RVRC floorball", image: "/images/life/life-rv-floorball.jpg" },
-  { id: "rvfop", caption: "RVRC Freshmen Orientation", image: "/images/life/life-rvfop.jpg" },
+  {
+    id: "fencing-1",
+    caption: "3rd place for SMUVC25 Men's Foil Teams",
+    image: "/images/life/life-fencing-1.jpg",
+  },
+  {
+    id: "rv-floorball",
+    caption: "1st place with RVRC Floorball in Inter College Games 2025",
+    image: "/images/life/life-rv-floorball.jpg",
+  },
+  {
+    id: "rvfop",
+    caption: "Vice-Project Director for RVFOP25",
+    image: "/images/life/life-rvfop.jpg",
+  },
 ];
 
 export type Faq = { question: string; answer: string; placeholder?: boolean };
