@@ -7,7 +7,6 @@ Items marked `placeholder: true` in `app/data.ts` render a small mint "PLACEHOLD
 
 | Key | What it is | Replace with |
 | --- | --- | --- |
-| `stats[2]` | "3 languages spoken · English · Bahasa Indonesia · Mandarin" | The actual three languages |
 | `projects[*].caseStudy.metrics[placeholder]` | "?" metric cells | Real measured numbers |
 | `education[0].details[2]` | "Coursework placeholder: favourite module so far" | A real NUS module |
 | `hero.phrases` | Cycling typewriter phrases (style choice) | Adjust copy if desired, not factual |
